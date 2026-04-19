@@ -8,6 +8,8 @@ const ibmPlexArabic = IBM_Plex_Sans_Arabic({
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-ibm-plex-arabic",
   display: "swap",
+  fallback: ["system-ui", "sans-serif"],
+  adjustFontFallback: false,
 });
 
 const jetbrainsMono = JetBrains_Mono({
@@ -15,6 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
   variable: "--font-jetbrains-mono",
   display: "swap",
+  fallback: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
