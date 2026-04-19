@@ -8,7 +8,6 @@ import {
   Pencil,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Chip } from "@/components/ui/chip";
 import { IconButton } from "@/components/ui/icon-button";
 import {
   PlatformBadge,
