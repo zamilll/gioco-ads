@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Segmented } from "@/components/ui/segmented";
+import { toast } from "@/components/ui/toast";
 
 type Range = "today" | "7d" | "30d" | "90d";
 
@@ -29,7 +30,16 @@ export function WelcomeHeader() {
       </div>
       <div className="flex items-center gap-[8px]">
         <Segmented items={ranges} value={range} onChange={setRange} />
-        <Button variant="ghost">
+        <Button
+          variant="ghost"
+          onClick={() =>
+            toast({
+              tone: "info",
+              title: "لا توجد بيانات لتصديرها",
+              description: "ابدأ بربط منصة واحدة على الأقل ثم حاول مجددًا.",
+            })
+          }
+        >
           <Download size={13} strokeWidth={1.8} />
           تصدير
         </Button>

@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { Segmented } from "@/components/ui/segmented";
 import { Divider } from "@/components/ui/divider";
+import { toast } from "@/components/ui/toast";
 import { useUIStore } from "@/lib/stores";
 
 export default function SettingsPage() {
@@ -31,14 +32,27 @@ export default function SettingsPage() {
   const [notifEmail, setNotifEmail] = useState(true);
   const [notifInApp, setNotifInApp] = useState(true);
   const [notifWeekly, setNotifWeekly] = useState(false);
+  const [twoFa, setTwoFa] = useState(false);
+
+  const handleSave = () =>
+    toast({
+      tone: "success",
+      title: "تم حفظ التغييرات",
+      description: "تحديث إعدادات مساحة العمل والملف الشخصي.",
+    });
 
   return (
     <AppShell crumbTitle="الإعدادات">
-      <div className="mb-[22px]">
-        <h1 className="text-[24px] font-bold tracking-tightish">الإعدادات</h1>
-        <p className="mt-[4px] text-[13px] text-ink-3">
-          إدارة مساحة العمل، الملف الشخصي، المظهر، والفواتير.
-        </p>
+      <div className="mb-[22px] flex items-end justify-between gap-[14px]">
+        <div>
+          <h1 className="text-[24px] font-bold tracking-tightish">الإعدادات</h1>
+          <p className="mt-[4px] text-[13px] text-ink-3">
+            إدارة مساحة العمل، الملف الشخصي، المظهر، والفواتير.
+          </p>
+        </div>
+        <Button variant="accent" size="md" onClick={handleSave}>
+          حفظ التغييرات
+        </Button>
       </div>
 
       <div className="grid gap-[18px] lg:grid-cols-2">
@@ -107,7 +121,17 @@ export default function SettingsPage() {
               >
                 {userName.slice(0, 1) || "و"}
               </div>
-              <Button variant="ghost" size="sm">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() =>
+                  toast({
+                    tone: "info",
+                    title: "تغيير الصورة",
+                    description: "ارفع صورة مربعة ≤ ٢ ميجابايت.",
+                  })
+                }
+              >
                 تغيير الصورة
               </Button>
             </div>
@@ -234,7 +258,17 @@ export default function SettingsPage() {
                     ١٤ يوم — حتى ربط أول منصة
                   </div>
                 </div>
-                <Button variant="accent" size="sm">
+                <Button
+                  variant="accent"
+                  size="sm"
+                  onClick={() =>
+                    toast({
+                      tone: "info",
+                      title: "ترقية الخطة",
+                      description: "ستفتح صفحة مقارنة الخطط قريبًا.",
+                    })
+                  }
+                >
                   ترقية الخطة
                 </Button>
               </div>
@@ -243,7 +277,18 @@ export default function SettingsPage() {
               <div className="flex items-center gap-[10px] rounded-[10px] border border-dashed border-line-2 p-[12px] text-[12.5px] text-ink-3">
                 <CreditCard size={14} strokeWidth={1.8} />
                 لم تُضَف بطاقة بعد
-                <Button variant="ghost" size="xs" className="ms-auto">
+                <Button
+                  variant="ghost"
+                  size="xs"
+                  className="ms-auto"
+                  onClick={() =>
+                    toast({
+                      tone: "info",
+                      title: "إضافة بطاقة",
+                      description: "سيفتح نموذج بطاقة آمن عبر Stripe قريبًا.",
+                    })
+                  }
+                >
                   إضافة
                 </Button>
               </div>
@@ -270,7 +315,17 @@ export default function SettingsPage() {
                   آخر تحديث: لم تُحدّث بعد
                 </div>
               </div>
-              <Button variant="ghost" size="sm">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() =>
+                  toast({
+                    tone: "info",
+                    title: "تغيير كلمة المرور",
+                    description: "سيصلك رابط تعيين كلمة مرور جديدة بالبريد.",
+                  })
+                }
+              >
                 تغيير
               </Button>
             </div>
@@ -278,8 +333,17 @@ export default function SettingsPage() {
             <ToggleRow
               title="التحقق بخطوتين (2FA)"
               desc="رمز تطبيق المصادقة عند كل تسجيل دخول."
-              checked={false}
-              onChange={() => {}}
+              checked={twoFa}
+              onChange={(v) => {
+                setTwoFa(v);
+                toast({
+                  tone: v ? "success" : "info",
+                  title: v ? "تم تفعيل 2FA" : "تم إيقاف 2FA",
+                  description: v
+                    ? "سيُطلب رمز المصادقة في كل تسجيل دخول."
+                    : "إيقاف التحقق بخطوتين يُقلل الأمان.",
+                });
+              }}
             />
             <Divider />
             <div className="flex items-center gap-[12px]">
@@ -290,7 +354,17 @@ export default function SettingsPage() {
                   جهاز واحد — هذا الجهاز
                 </div>
               </div>
-              <Button variant="ghost" size="sm">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() =>
+                  toast({
+                    tone: "info",
+                    title: "إدارة الجلسات",
+                    description: "عرض الأجهزة المسجّلة وتسجيل الخروج منها.",
+                  })
+                }
+              >
                 إدارة
               </Button>
             </div>

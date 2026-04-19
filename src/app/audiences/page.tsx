@@ -5,8 +5,22 @@ import { AppShell } from "@/components/layout/app-shell";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty-state";
+import { toast } from "@/components/ui/toast";
 
 export default function AudiencesPage() {
+  const createAudience = () =>
+    toast({
+      tone: "info",
+      title: "إنشاء جمهور",
+      description: "سيفتح معالج إنشاء الجمهور عند ربط أول منصة.",
+    });
+  const uploadCSV = () =>
+    toast({
+      tone: "info",
+      title: "رفع قائمة CSV",
+      description: "ارفع قائمة عملاء (هاتف/بريد) لإنشاء Custom Audience.",
+    });
+
   return (
     <AppShell crumbTitle="الجمهور المستهدف">
       <div className="mb-[22px] flex items-end justify-between gap-[14px]">
@@ -18,7 +32,7 @@ export default function AudiencesPage() {
             جماهير مخصصة، Lookalikes، وقوائم إعادة الاستهداف عبر المنصات.
           </p>
         </div>
-        <Button variant="accent" size="md">
+        <Button variant="accent" size="md" onClick={createAudience}>
           <Plus size={14} strokeWidth={2.2} />
           جمهور جديد
         </Button>
@@ -31,13 +45,13 @@ export default function AudiencesPage() {
           title="لا توجد جماهير بعد"
           description="أنشئ جمهورًا مخصصًا من زوار الموقع أو ارفع قائمة عملاء (CSV) أو بنِ Lookalike بناءً على المشترين."
           action={
-            <Button variant="accent" size="sm">
+            <Button variant="accent" size="sm" onClick={createAudience}>
               <Plus size={13} strokeWidth={2} />
               جمهور جديد
             </Button>
           }
           secondary={
-            <Button variant="ghost" size="sm">
+            <Button variant="ghost" size="sm" onClick={uploadCSV}>
               <UploadCloud size={13} strokeWidth={1.8} />
               رفع CSV
             </Button>

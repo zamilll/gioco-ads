@@ -10,6 +10,7 @@ import { PlatformStack } from "@/components/ui/platform-badge";
 import { Progress } from "@/components/ui/progress";
 import { DataTable, type Column } from "@/components/ui/data-table";
 import { EmptyState } from "@/components/ui/empty-state";
+import { toast } from "@/components/ui/toast";
 import { Filter as FilterIcon, Megaphone, Plus } from "lucide-react";
 import { campaigns, type CampaignRow } from "@/lib/mock-data";
 
@@ -120,7 +121,16 @@ export function CampaignsTable() {
         actions={
           <div className="flex items-center gap-[8px]">
             <Segmented items={tabs} value={filter} onChange={setFilter} />
-            <Button variant="ghost">
+            <Button
+              variant="ghost"
+              onClick={() =>
+                toast({
+                  tone: "info",
+                  title: "تصفية متقدمة",
+                  description: "ستُتاح فلاتر المنصة والميزانية والنطاق قريبًا.",
+                })
+              }
+            >
               <FilterIcon size={13} strokeWidth={1.8} />
               تصفية
             </Button>

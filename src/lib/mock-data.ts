@@ -5,6 +5,7 @@ export const PLATFORM_COLORS: Record<Platform, string> = {
   snap: "#EBB200",
   tiktok: "#141414",
   insta: "#D64B7E",
+  google: "#4285F4",
 };
 
 export const performanceSeries: Array<{
@@ -12,6 +13,7 @@ export const performanceSeries: Array<{
   snap: number;
   tiktok: number;
   insta: number;
+  google: number;
 }> = [];
 
 export const spendDistribution: Array<{

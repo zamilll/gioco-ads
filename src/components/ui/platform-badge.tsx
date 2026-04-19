@@ -1,24 +1,28 @@
 import { cn } from "@/lib/utils";
 
-export type Platform = "snap" | "tiktok" | "insta";
+export type Platform = "snap" | "tiktok" | "insta" | "google";
 
 const STYLES: Record<Platform, string> = {
   snap: "bg-snap-bg text-[#8A6D00]",
   tiktok: "bg-tiktok text-white",
   insta:
     "text-white [background:linear-gradient(135deg,#F6A64B,#D64B7E_45%,#8A3FB0)]",
+  google:
+    "text-white [background:conic-gradient(from_210deg,#4285F4_0deg,#34A853_90deg,#FBBC04_180deg,#EA4335_270deg,#4285F4_360deg)]",
 };
 
 const GLYPH: Record<Platform, string> = {
   snap: "S",
   tiktok: "T",
   insta: "I",
+  google: "G",
 };
 
 export const PLATFORM_NAME: Record<Platform, string> = {
   snap: "Snap Ads",
   tiktok: "TikTok Ads",
   insta: "Instagram Ads",
+  google: "Google Ads",
 };
 
 export function PlatformBadge({

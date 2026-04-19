@@ -13,6 +13,7 @@ import { PlatformStack } from "@/components/ui/platform-badge";
 import { Progress } from "@/components/ui/progress";
 import { DataTable, type Column } from "@/components/ui/data-table";
 import { EmptyState } from "@/components/ui/empty-state";
+import { toast } from "@/components/ui/toast";
 import { useCampaigns } from "@/lib/api";
 import type { CampaignRow } from "@/lib/mock-data";
 
@@ -159,7 +160,17 @@ export default function CampaignsListPage() {
                 />
               </div>
               <Segmented items={tabs} value={filter} onChange={setFilter} />
-              <Button variant="ghost" size="sm">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() =>
+                  toast({
+                    tone: "info",
+                    title: "تصفية متقدمة",
+                    description: "ستُتاح فلاتر المنصة والميزانية والنطاق قريبًا.",
+                  })
+                }
+              >
                 <FilterIcon size={13} strokeWidth={1.8} />
                 تصفية
               </Button>

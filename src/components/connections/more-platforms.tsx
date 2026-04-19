@@ -1,8 +1,11 @@
+"use client";
+
 import { Plus } from "lucide-react";
 import { Card, CardHeader } from "@/components/ui/card";
+import { toast } from "@/components/ui/toast";
 import { morePlatforms } from "@/lib/mock-connections";
 
-const SECONDARY_IDS = new Set(["facebook", "x", "youtube", "linkedin"]);
+const SECONDARY_IDS = new Set(["facebook", "x", "linkedin"]);
 
 export function MorePlatforms() {
   const items = morePlatforms.filter((p) => SECONDARY_IDS.has(p.id));
@@ -10,13 +13,21 @@ export function MorePlatforms() {
     <Card className="mb-[20px]">
       <CardHeader
         title="المزيد من المنصات للربط"
-        subtitle="قريبًا أو متاحة حسب خطتك"
+        subtitle="قريبًا — ستُتاح في التحديثات القادمة"
       />
-      <div className="grid gap-[12px] p-[18px] md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-[12px] p-[18px] md:grid-cols-2 lg:grid-cols-3">
         {items.map((p) => (
           <button
             key={p.id}
             type="button"
+            onClick={() =>
+              toast({
+                tone: "info",
+                title: `${p.name} — قريبًا`,
+                description:
+                  "سنُشعرك عند إتاحة الربط مع هذه المنصة. اطلع على خطة الطريق.",
+              })
+            }
             className="group flex items-start gap-[10px] rounded-[12px] border border-dashed border-line-2 bg-panel p-[14px] text-start transition-colors hover:border-ink-3 hover:bg-chip/40"
           >
             <span

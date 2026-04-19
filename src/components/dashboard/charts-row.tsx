@@ -34,6 +34,7 @@ export function ChartsRow() {
               { name: "Snap", color: PLATFORM_COLORS.snap },
               { name: "TikTok", color: "var(--ink)" },
               { name: "Instagram", color: PLATFORM_COLORS.insta },
+              { name: "Google", color: PLATFORM_COLORS.google },
             ].map((l) => (
               <span key={l.name}>
                 <span

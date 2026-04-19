@@ -1,9 +1,12 @@
+"use client";
+
 import { Layers } from "lucide-react";
 import Link from "next/link";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { PlatformBadge } from "@/components/ui/platform-badge";
 import { EmptyState } from "@/components/ui/empty-state";
+import { toast } from "@/components/ui/toast";
 import { platformPerformance } from "@/lib/mock-data";
 
 export function PlatformPerformanceCard() {
@@ -12,7 +15,11 @@ export function PlatformPerformanceCard() {
       <CardHeader
         title="أداء المنصات"
         subtitle="مقارنة مباشرة"
-        actions={<Button variant="ghost">مقارنة تفصيلية ←</Button>}
+        actions={
+          <Link href="/reports">
+            <Button variant="ghost">مقارنة تفصيلية ←</Button>
+          </Link>
+        }
       />
       {platformPerformance.length === 0 ? (
         <EmptyState
@@ -66,7 +73,17 @@ export function PlatformPerformanceCard() {
               </div>
               <div className="num">{p.cpa}</div>
               <div>
-                <Button variant="ghost" size="xs">
+                <Button
+                  variant="ghost"
+                  size="xs"
+                  onClick={() =>
+                    toast({
+                      tone: "info",
+                      title: `تفاصيل ${p.name}`,
+                      description: "ستُفتح صفحة تفصيلية للمنصة.",
+                    })
+                  }
+                >
                   تفاصيل
                 </Button>
               </div>

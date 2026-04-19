@@ -102,6 +102,15 @@ export function PerformanceChart() {
             dot={false}
             activeDot={{ r: 5, stroke: "var(--panel)", strokeWidth: 2 }}
           />
+          <Line
+            type="monotone"
+            dataKey="google"
+            name="Google"
+            stroke={PLATFORM_COLORS.google}
+            strokeWidth={2.2}
+            dot={false}
+            activeDot={{ r: 5, stroke: "var(--panel)", strokeWidth: 2 }}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Play } from "lucide-react";
 import { Card, CardHeader } from "@/components/ui/card";
 import { PlatformBadge } from "@/components/ui/platform-badge";
@@ -10,12 +11,12 @@ export function CreativesGrid({ creatives }: { creatives: CreativeCard[] }) {
         title="الإبداعات"
         subtitle={`${creatives.length} إبداع نشط`}
         actions={
-          <button
-            type="button"
+          <Link
+            href="/creatives"
             className="text-[12px] font-semibold text-accent hover:underline"
           >
             عرض الكل
-          </button>
+          </Link>
         }
       />
       <div className="grid gap-[12px] p-[14px] sm:grid-cols-2 lg:grid-cols-3">

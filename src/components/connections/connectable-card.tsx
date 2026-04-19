@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,7 +8,7 @@ import {
   PLATFORM_NAME,
   type Platform,
 } from "@/components/ui/platform-badge";
-import { useConnectPlatform } from "@/lib/api";
+import { OAuthConsentDialog } from "./oauth-consent-dialog";
 
 const PLATFORMS: Array<{
   id: Platform;
@@ -29,15 +30,34 @@ const PLATFORMS: Array<{
     desc: "Meta Marketing API — Instagram و Facebook",
     highlights: ["ads_management", "رمز ٦٠ يوم", "تنبيه قبل الانتهاء"],
   },
+  {
+    id: "google",
+    desc: "Google Ads API — Search + YouTube + Display Network",
+    highlights: ["adwords scope", "رمز تحديث دائم", "YouTube متكامل"],
+  },
 ];
 
 export function ConnectableList() {
+  const [dialogPlatform, setDialogPlatform] = useState<Platform | null>(null);
   return (
-    <div className="mb-[20px] grid gap-[14px]">
-      {PLATFORMS.map((p) => (
-        <ConnectableCard key={p.id} {...p} />
-      ))}
-    </div>
+    <>
+      <div className="mb-[20px] grid gap-[14px]">
+        {PLATFORMS.map((p) => (
+          <ConnectableCard
+            key={p.id}
+            {...p}
+            onConnect={() => setDialogPlatform(p.id)}
+          />
+        ))}
+      </div>
+      <OAuthConsentDialog
+        platform={dialogPlatform}
+        open={dialogPlatform !== null}
+        onOpenChange={(o) => {
+          if (!o) setDialogPlatform(null);
+        }}
+      />
+    </>
   );
 }
 
@@ -45,12 +65,13 @@ function ConnectableCard({
   id,
   desc,
   highlights,
+  onConnect,
 }: {
   id: Platform;
   desc: string;
   highlights: string[];
+  onConnect: () => void;
 }) {
-  const { mutate, isPending } = useConnectPlatform();
   return (
     <div className="flex flex-wrap items-start gap-[14px] rounded-card border border-line bg-panel p-[18px] shadow-token-sm">
       <PlatformBadge platform={id} size="md" />
@@ -73,14 +94,9 @@ function ConnectableCard({
           ))}
         </div>
       </div>
-      <Button
-        variant="accent"
-        size="sm"
-        onClick={() => mutate(id)}
-        disabled={isPending}
-      >
+      <Button variant="accent" size="sm" onClick={onConnect}>
         <Plus size={13} strokeWidth={2} />
-        {isPending ? "جاري الربط…" : "ربط الحساب"}
+        ربط الحساب
       </Button>
     </div>
   );

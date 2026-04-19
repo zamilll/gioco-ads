@@ -20,7 +20,13 @@ import { PLATFORM_NAME } from "@/components/ui/platform-badge";
 export function DailyPerformanceCard({
   data,
 }: {
-  data: Array<{ date: string; snap: number; tiktok: number; insta: number }>;
+  data: Array<{
+    date: string;
+    snap: number;
+    tiktok: number;
+    insta: number;
+    google: number;
+  }>;
 }) {
   const { chartView, setChartView } = useCampaignDetailUI();
 
@@ -111,6 +117,12 @@ export function DailyPerformanceCard({
               dataKey="insta"
               stackId={chartView === "combined" ? "all" : undefined}
               fill={PLATFORM_COLORS.insta}
+              radius={[4, 4, 0, 0]}
+            />
+            <Bar
+              dataKey="google"
+              stackId={chartView === "combined" ? "all" : undefined}
+              fill={PLATFORM_COLORS.google}
               radius={[4, 4, 0, 0]}
             />
           </BarChart>

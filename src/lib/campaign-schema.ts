@@ -9,7 +9,7 @@ export const objectiveSchema = z.enum([
   "catalog",
 ]);
 
-export const platformSchema = z.enum(["snap", "tiktok", "insta"]);
+export const platformSchema = z.enum(["snap", "tiktok", "insta", "google"]);
 
 export const genderSchema = z.enum(["all", "female", "male"]);
 

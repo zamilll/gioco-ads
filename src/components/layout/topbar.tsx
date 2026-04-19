@@ -1,6 +1,7 @@
 "use client";
 
 import { Bell, Search } from "lucide-react";
+import { toast } from "@/components/ui/toast";
 
 export function Topbar({ crumbTitle }: { crumbTitle: string }) {
   return (
@@ -28,6 +29,13 @@ export function Topbar({ crumbTitle }: { crumbTitle: string }) {
       <button
         type="button"
         aria-label="الإشعارات"
+        onClick={() =>
+          toast({
+            tone: "info",
+            title: "لا توجد إشعارات",
+            description: "ستصلك هنا تنبيهات الأداء وانتهاء الصلاحيات.",
+          })
+        }
         className="grid h-[34px] w-[34px] place-items-center rounded-[9px] border border-line bg-panel text-ink-2 hover:border-line-2 hover:text-ink"
       >
         <Bell size={15} strokeWidth={1.7} />

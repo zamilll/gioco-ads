@@ -7,6 +7,7 @@ export const dailyPerformance: Array<{
   snap: number;
   tiktok: number;
   insta: number;
+  google: number;
 }> = [];
 
 export interface CreativeCard {

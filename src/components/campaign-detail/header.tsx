@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
 import { StatusChip } from "@/components/ui/status-chip";
 import { PlatformBadge } from "@/components/ui/platform-badge";
+import { toast } from "@/components/ui/toast";
 import { useCampaignDetailUI } from "@/lib/stores";
 import { useToggleCampaignActive } from "@/lib/api";
 import type { CampaignDetail } from "@/lib/types";
@@ -16,6 +17,13 @@ export function CampaignHeader({ campaign }: { campaign: CampaignDetail }) {
   const handleToggle = (v: boolean) => {
     setActive(v);
     toggle(v);
+    toast({
+      tone: v ? "success" : "info",
+      title: v ? "تم تفعيل الحملة" : "تم إيقاف الحملة",
+      description: v
+        ? "سيستأنف العرض خلال دقائق."
+        : "لن يُعرض الإعلان حتى إعادة التفعيل.",
+    });
   };
 
   return (
@@ -59,15 +67,45 @@ export function CampaignHeader({ campaign }: { campaign: CampaignDetail }) {
             aria-label="تشغيل/إيقاف الحملة"
           />
         </div>
-        <Button variant="ghost" size="sm">
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() =>
+            toast({
+              tone: "info",
+              title: "تعديل الحملة",
+              description: "ستُفتح شاشة تحرير شاملة مع خطوات الـ Wizard.",
+            })
+          }
+        >
           <Pencil size={13} strokeWidth={1.8} />
           تعديل
         </Button>
-        <Button variant="ghost" size="sm">
+        <Button
+          variant="ghost"
+          size="sm"
+          onClick={() =>
+            toast({
+              tone: "info",
+              title: "تقرير الحملة",
+              description: "سيُصدَّر التقرير بصيغة PDF.",
+            })
+          }
+        >
           <FileText size={13} strokeWidth={1.8} />
           تقرير
         </Button>
-        <Button variant="accent" size="sm">
+        <Button
+          variant="accent"
+          size="sm"
+          onClick={() =>
+            toast({
+              tone: "info",
+              title: "إبداع جديد",
+              description: "ارفع فيديو أو صورة لإضافته للحملة.",
+            })
+          }
+        >
           <Plus size={13} strokeWidth={2} />
           إبداع جديد
         </Button>

@@ -25,6 +25,13 @@ export const morePlatforms = [
     bg: "#FBE6EE",
   },
   {
+    id: "google",
+    name: "Google Ads",
+    desc: "Search + YouTube + Display عبر Google Ads API",
+    color: "#4285F4",
+    bg: "#E8F0FE",
+  },
+  {
     id: "facebook",
     name: "Facebook Ads",
     desc: "امتداد لـ Meta — نفس حساب Instagram",
@@ -37,13 +44,6 @@ export const morePlatforms = [
     desc: "إعلانات على منصة X (تويتر سابقًا)",
     color: "#111111",
     bg: "#EDEDEF",
-  },
-  {
-    id: "youtube",
-    name: "YouTube Ads",
-    desc: "عبر Google Ads — فيديو قبل وأثناء",
-    color: "#FF0000",
-    bg: "#FCE6E6",
   },
   {
     id: "linkedin",

@@ -35,6 +35,12 @@ const PLATFORMS: Array<{
     spec: "١:١ أو ٤:٥ أو ٩:١٦ · Carousel مدعوم",
     reach: "الفئة ٢٥-٤٤ الأعلى قيمة",
   },
+  {
+    id: "google",
+    desc: "Search + YouTube + Display — نطاق واسع عالي النية",
+    spec: "Search text · YouTube skippable ≤٣٠s · Display 300×250 وغيرها",
+    reach: "أعلى نية شرائية (بحث)",
+  },
 ];
 
 export function StepPlatforms() {

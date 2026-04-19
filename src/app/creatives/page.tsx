@@ -6,8 +6,16 @@ import { AppShell } from "@/components/layout/app-shell";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { EmptyState } from "@/components/ui/empty-state";
+import { toast } from "@/components/ui/toast";
 
 export default function CreativesPage() {
+  const handleUpload = () =>
+    toast({
+      tone: "info",
+      title: "رفع الإبداعات",
+      description: "سيفتح مدير الرفع بعد اكتمال ربط أول منصة.",
+    });
+
   return (
     <AppShell crumbTitle="الإبداعات">
       <div className="mb-[22px] flex items-end justify-between gap-[14px]">
@@ -17,7 +25,7 @@ export default function CreativesPage() {
             فيديوهات، صور، وكاتالوج — مكتبة الإبداعات عبر كل الحملات.
           </p>
         </div>
-        <Button variant="accent" size="md">
+        <Button variant="accent" size="md" onClick={handleUpload}>
           <Upload size={14} strokeWidth={2.2} />
           رفع إبداع
         </Button>
@@ -30,7 +38,7 @@ export default function CreativesPage() {
           title="لا توجد إبداعات بعد"
           description="ارفع أول فيديو أو صورة أو Carousel لإعادة استخدامها في الحملات. الأبعاد الموصى بها: ٩:١٦ للفيديو العمودي."
           action={
-            <Button variant="accent" size="sm">
+            <Button variant="accent" size="sm" onClick={handleUpload}>
               <Upload size={13} strokeWidth={2} />
               رفع إبداع
             </Button>

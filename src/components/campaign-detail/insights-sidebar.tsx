@@ -2,6 +2,7 @@
 
 import { Sparkles, ArrowLeft } from "lucide-react";
 import { Card, CardBody, CardHeader } from "@/components/ui/card";
+import { toast } from "@/components/ui/toast";
 import { cn, toArabicDigits } from "@/lib/utils";
 
 export function GeoCard({
@@ -147,6 +148,13 @@ export function RecommendationCard() {
       </p>
       <button
         type="button"
+        onClick={() =>
+          toast({
+            tone: "success",
+            title: "تم تطبيق التوصية",
+            description: "سيُعاد توزيع الميزانية تلقائيًا خلال ساعة.",
+          })
+        }
         className="mt-[14px] inline-flex items-center gap-[6px] rounded-[9px] bg-bg/10 px-[12px] py-[7px] text-[12.5px] font-semibold transition-colors hover:bg-bg/20"
       >
         تطبيق التوصية
