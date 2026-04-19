@@ -4,6 +4,7 @@ import { AppShell } from "@/components/layout/app-shell";
 import { StatusBanner } from "@/components/connections/status-banner";
 import { HowItWorks } from "@/components/connections/how-it-works";
 import { PlatformCard } from "@/components/connections/platform-card";
+import { ConnectableList } from "@/components/connections/connectable-card";
 import { MorePlatforms } from "@/components/connections/more-platforms";
 import { SecurityAndSync } from "@/components/connections/security-sync";
 import { FaqSection } from "@/components/connections/faq-section";
@@ -30,11 +31,15 @@ export default function ConnectionsPage() {
       <StatusBanner connected={connected} total={3} />
       <HowItWorks />
 
-      <div className="mb-[20px] flex flex-col gap-[14px]">
-        {connections.map((c) => (
-          <PlatformCard key={c.platform} connection={c} />
-        ))}
-      </div>
+      {connections.length === 0 ? (
+        <ConnectableList />
+      ) : (
+        <div className="mb-[20px] flex flex-col gap-[14px]">
+          {connections.map((c) => (
+            <PlatformCard key={c.platform} connection={c} />
+          ))}
+        </div>
+      )}
 
       <MorePlatforms />
       <SecurityAndSync />

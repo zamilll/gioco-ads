@@ -1,10 +1,23 @@
 "use client";
 
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
+import { PieChart as PieIcon } from "lucide-react";
 import { spendDistribution } from "@/lib/mock-data";
 import { toArabicDigits } from "@/lib/utils";
+import { EmptyState } from "@/components/ui/empty-state";
 
 export function SpendDonut() {
+  if (spendDistribution.length === 0) {
+    return (
+      <EmptyState
+        size="sm"
+        icon={<PieIcon size={22} strokeWidth={1.6} />}
+        title="لا يوجد إنفاق"
+        description="أنشئ حملتك الأولى ليظهر توزيع الإنفاق عبر المنصات."
+      />
+    );
+  }
+  const total = spendDistribution.reduce((s, x) => s + x.value, 0);
   return (
     <div className="flex items-center gap-[18px]">
       <div className="relative h-[150px] w-[150px] shrink-0">
@@ -29,7 +42,7 @@ export function SpendDonut() {
         <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center">
           <span className="text-[10px] text-ink-3">الإجمالي</span>
           <span className="num text-[14px] font-bold">
-            {toArabicDigits("74.8K")}
+            {toArabicDigits(Math.round(total / 1000))}K
           </span>
         </div>
       </div>

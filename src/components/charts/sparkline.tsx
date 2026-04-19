@@ -11,6 +11,7 @@ export function Sparkline({
 }) {
   const width = 300;
   const height = 34;
+  if (values.length === 0) return null;
   const stepX = width / (values.length - 1 || 1);
   const points = values.map((v, i) => `${i * stepX},${v}`).join(" L");
   const path = `M${points}`;

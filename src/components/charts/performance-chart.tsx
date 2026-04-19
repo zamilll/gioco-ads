@@ -9,10 +9,24 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
+import { LineChart as LineIcon } from "lucide-react";
 import { performanceSeries, PLATFORM_COLORS } from "@/lib/mock-data";
 import { toArabicDigits } from "@/lib/utils";
+import { EmptyState } from "@/components/ui/empty-state";
 
 export function PerformanceChart() {
+  if (performanceSeries.length === 0) {
+    return (
+      <div className="h-[240px] w-full">
+        <EmptyState
+          size="sm"
+          icon={<LineIcon size={22} strokeWidth={1.6} />}
+          title="لا توجد بيانات أداء بعد"
+          description="ستظهر منحنيات الأداء هنا بعد اتصال أول منصة وبدء المزامنة."
+        />
+      </div>
+    );
+  }
   return (
     <div className="h-[240px] w-full">
       <ResponsiveContainer width="100%" height="100%">

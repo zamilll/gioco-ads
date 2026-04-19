@@ -30,16 +30,20 @@ export function KpiCard({
         {value}
       </div>
       <div className="mt-[10px] flex items-center justify-between text-[12px] text-ink-3">
-        <span
-          className={cn(
-            "inline-flex items-center gap-[4px] rounded-full px-[7px] py-[2px] text-[12px] font-semibold",
-            deltaDirection === "up"
-              ? "bg-good-bg text-good"
-              : "bg-bad-bg text-bad",
-          )}
-        >
-          {deltaDirection === "up" ? "▲" : "▼"} {deltaLabel}
-        </span>
+        {deltaLabel && deltaLabel !== "—" ? (
+          <span
+            className={cn(
+              "inline-flex items-center gap-[4px] rounded-full px-[7px] py-[2px] text-[12px] font-semibold",
+              deltaDirection === "up"
+                ? "bg-good-bg text-good"
+                : "bg-bad-bg text-bad",
+            )}
+          >
+            {deltaDirection === "up" ? "▲" : "▼"} {deltaLabel}
+          </span>
+        ) : (
+          <span className="text-[11.5px] text-ink-4">—</span>
+        )}
         {meta ? <span>{meta}</span> : null}
       </div>
       {spark ? (

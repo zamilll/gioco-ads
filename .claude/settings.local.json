@@ -16,7 +16,21 @@
       "Bash(curl -s http://localhost:3001/campaigns/c1)",
       "Bash(kill %1)",
       "Bash(pkill -f \"next dev\")",
-      "Bash(curl -sf http://localhost:3001 -o /dev/null)"
+      "Bash(curl -sf http://localhost:3001 -o /dev/null)",
+      "Bash(git -C /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app rev-parse --is-inside-work-tree)",
+      "Bash(git -C /Users/zm/Desktop/design_handoff_gioco_ads rev-parse --is-inside-work-tree)",
+      "Bash(git -C /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app status)",
+      "Bash(git -C /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app remote -v)",
+      "Bash(git -C /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app status -uno --short)",
+      "Bash(git -C /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app ls-files --others --exclude-standard)",
+      "Bash(git *)",
+      "Bash(mkdir -p /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/public/fonts)",
+      "Bash(curl -sSfL -o ibm-plex-arabic-400.woff2 \"https://fonts.gstatic.com/s/ibmplexsansarabic/v12/Qw3CZRtXPQwuDE1LbKUZRW4F9YAqJKxw.woff2\")",
+      "Bash(curl -sSfL -o ibm-plex-arabic-500.woff2 \"https://fonts.gstatic.com/s/ibmplexsansarabic/v12/Qw3XZRtXPQwuDE1LbKUZRW4FqHpQkAo-UpVg7P.woff2\")",
+      "Bash(curl -sSfL -o ibm-plex-arabic-600.woff2 \"https://fonts.gstatic.com/s/ibmplexsansarabic/v12/Qw3XZRtXPQwuDE1LbKUZRW4FqHpQbAs-UpVg7P.woff2\")",
+      "Bash(curl -sSfL -o ibm-plex-arabic-700.woff2 \"https://fonts.gstatic.com/s/ibmplexsansarabic/v12/Qw3XZRtXPQwuDE1LbKUZRW4FqHpQSAw-UpVg7P.woff2\")",
+      "Bash(unzip -o -j /tmp/jbm.zip \"fonts/webfonts/JetBrainsMono-Regular.woff2\" \"fonts/webfonts/JetBrainsMono-Medium.woff2\" \"fonts/webfonts/JetBrainsMono-SemiBold.woff2\" -d .)",
+      "Bash(echo \"tsc exit: $?\")"
     ]
   }
 }

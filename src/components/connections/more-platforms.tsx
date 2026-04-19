@@ -2,7 +2,10 @@ import { Plus } from "lucide-react";
 import { Card, CardHeader } from "@/components/ui/card";
 import { morePlatforms } from "@/lib/mock-connections";
 
+const SECONDARY_IDS = new Set(["facebook", "x", "youtube", "linkedin"]);
+
 export function MorePlatforms() {
+  const items = morePlatforms.filter((p) => SECONDARY_IDS.has(p.id));
   return (
     <Card className="mb-[20px]">
       <CardHeader
@@ -10,7 +13,7 @@ export function MorePlatforms() {
         subtitle="قريبًا أو متاحة حسب خطتك"
       />
       <div className="grid gap-[12px] p-[18px] md:grid-cols-2 lg:grid-cols-4">
-        {morePlatforms.map((p) => (
+        {items.map((p) => (
           <button
             key={p.id}
             type="button"

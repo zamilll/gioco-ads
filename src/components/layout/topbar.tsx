@@ -8,7 +8,7 @@ export function Topbar({ crumbTitle }: { crumbTitle: string }) {
       <div className="flex items-center gap-[8px] text-[13px] text-ink-3">
         <span>الفضاءات</span>
         <span className="text-ink-4">›</span>
-        <span>وكالة Maha</span>
+        <span>واعد للتسويق</span>
         <span className="text-ink-4">›</span>
         <b className="font-semibold text-ink">{crumbTitle}</b>
       </div>
@@ -37,7 +37,7 @@ export function Topbar({ crumbTitle }: { crumbTitle: string }) {
         className="grid h-[30px] w-[30px] place-items-center rounded-full text-[12px] font-semibold text-white"
         style={{ background: "linear-gradient(135deg, #D6AE7B, #8A6D43)" }}
       >
-        م
+        و
       </div>
     </div>
   );

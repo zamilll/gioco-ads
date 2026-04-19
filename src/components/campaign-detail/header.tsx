@@ -7,11 +7,9 @@ import { StatusChip } from "@/components/ui/status-chip";
 import { PlatformBadge } from "@/components/ui/platform-badge";
 import { useCampaignDetailUI } from "@/lib/stores";
 import { useToggleCampaignActive } from "@/lib/api";
-import type { campaignDetailMock } from "@/lib/mock-campaign-detail";
+import type { CampaignDetail } from "@/lib/types";
 
-type Campaign = typeof campaignDetailMock;
-
-export function CampaignHeader({ campaign }: { campaign: Campaign }) {
+export function CampaignHeader({ campaign }: { campaign: CampaignDetail }) {
   const { active, setActive } = useCampaignDetailUI();
   const { mutate: toggle } = useToggleCampaignActive(campaign.id);
 

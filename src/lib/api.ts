@@ -9,13 +9,14 @@ import type { Connection } from "./types";
 import type { Platform } from "@/components/ui/platform-badge";
 import { connectionsMock } from "./mock-connections";
 import {
-  campaignDetailMock,
   dailyPerformance,
   creatives,
   geoBreakdown,
   peakHours,
   ageBuckets,
 } from "./mock-campaign-detail";
+import { campaigns, type CampaignRow } from "./mock-data";
+import type { CampaignDetail } from "./types";
 
 const delay = (ms: number) => new Promise((r) => setTimeout(r, ms));
 
@@ -23,8 +24,18 @@ export function useConnections() {
   return useQuery<Connection[]>({
     queryKey: ["connections"],
     queryFn: async () => {
-      await delay(200);
+      await delay(100);
       return connectionsMock;
+    },
+  });
+}
+
+export function useCampaigns() {
+  return useQuery<CampaignRow[]>({
+    queryKey: ["campaigns"],
+    queryFn: async () => {
+      await delay(100);
+      return campaigns;
     },
   });
 }
@@ -33,7 +44,7 @@ export function useConnectPlatform() {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: async (platform: Platform) => {
-      await delay(500);
+      await delay(400);
       return platform;
     },
     onSuccess: () => qc.invalidateQueries({ queryKey: ["connections"] }),
@@ -55,7 +66,7 @@ export function useRefreshToken() {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: async (platform: Platform) => {
-      await delay(600);
+      await delay(500);
       return platform;
     },
     onSuccess: () => qc.invalidateQueries({ queryKey: ["connections"] }),
@@ -66,7 +77,7 @@ export function useResync() {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: async (platform: Platform) => {
-      await delay(800);
+      await delay(600);
       return platform;
     },
     onSuccess: () => qc.invalidateQueries({ queryKey: ["connections"] }),
@@ -74,11 +85,11 @@ export function useResync() {
 }
 
 export function useCampaign(id: string) {
-  return useQuery({
+  return useQuery<CampaignDetail | null>({
     queryKey: ["campaign", id],
     queryFn: async () => {
-      await delay(150);
-      return campaignDetailMock;
+      await delay(100);
+      return null;
     },
   });
 }
@@ -87,7 +98,7 @@ export function useCampaignMetrics(id: string) {
   return useQuery({
     queryKey: ["campaign", id, "metrics"],
     queryFn: async () => {
-      await delay(200);
+      await delay(100);
       return {
         daily: dailyPerformance,
         creatives,
@@ -103,7 +114,7 @@ export function useToggleCampaignActive(id: string) {
   const qc = useQueryClient();
   return useMutation({
     mutationFn: async (active: boolean) => {
-      await delay(250);
+      await delay(200);
       return active;
     },
     onSuccess: () => qc.invalidateQueries({ queryKey: ["campaign", id] }),
@@ -113,7 +124,7 @@ export function useToggleCampaignActive(id: string) {
 export function useCreateCampaign() {
   return useMutation({
     mutationFn: async (draft: unknown) => {
-      await delay(1200);
+      await delay(800);
       return { id: "c-new", draft };
     },
   });

@@ -1,59 +1,29 @@
 import type { Connection } from "./types";
 
-export const connectionsMock: Connection[] = [
-  {
-    platform: "snap",
-    status: "connected",
-    connectedAt: "٢٠٢٥/١١/٠٨",
-    accountId: "snap_6421039857",
-    accountName: "Maha Agency — Snap Business",
-    adAccounts: 3,
-    lastSyncAt: "منذ ٨ دقائق",
-    pixelActive: true,
-    eventsApi: true,
-    tokenExpiresAt: "بعد ٢٩ دقيقة (تجديد تلقائي)",
-    scopes: ["snapchat-marketing-api", "read_user"],
-  },
-  {
-    platform: "tiktok",
-    status: "connected",
-    connectedAt: "٢٠٢٥/١٠/٢٢",
-    accountId: "tiktok_7284930012",
-    accountName: "Maha Agency — TikTok Business Center",
-    adAccounts: 5,
-    lastSyncAt: "منذ ١٢ دقيقة",
-    pixelActive: true,
-    eventsApi: true,
-    tokenExpiresAt: "٢٠٢٧/١٠/٢٢",
-    scopes: [
-      "user.info.basic",
-      "campaign.list",
-      "campaign.create",
-      "ad.list",
-      "ad.create",
-    ],
-  },
-  {
-    platform: "insta",
-    status: "expiring",
-    connectedAt: "٢٠٢٥/٠٩/١٤",
-    accountId: "act_928471635829104",
-    accountName: "Maha Agency — Meta Business Suite",
-    adAccounts: 2,
-    lastSyncAt: "منذ ٤٥ دقيقة",
-    pixelActive: true,
-    eventsApi: false,
-    tokenExpiresAt: "بعد ٣ أيام — ينتهي ٢٠٢٦/٠٤/٢٢",
-    scopes: [
-      "ads_management",
-      "ads_read",
-      "business_management",
-      "instagram_basic",
-    ],
-  },
-];
+export const connectionsMock: Connection[] = [];
 
 export const morePlatforms = [
+  {
+    id: "snap",
+    name: "Snap Ads",
+    desc: "إعلانات فيديو عمودية للفئة ١٣-٣٤",
+    color: "#8A6D00",
+    bg: "#FFF4CF",
+  },
+  {
+    id: "tiktok",
+    name: "TikTok Ads",
+    desc: "TikTok Business API — حملات فيديو قصير",
+    color: "#111111",
+    bg: "#E8E8EA",
+  },
+  {
+    id: "insta",
+    name: "Instagram Ads",
+    desc: "Meta Marketing API — Instagram و Facebook",
+    color: "#D64B7E",
+    bg: "#FBE6EE",
+  },
   {
     id: "facebook",
     name: "Facebook Ads",

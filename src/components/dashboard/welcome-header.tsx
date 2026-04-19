@@ -20,11 +20,11 @@ export function WelcomeHeader() {
     <div className="mb-[20px] flex items-end justify-between gap-[20px]">
       <div>
         <h1 className="m-0 mb-[4px] text-[24px] font-bold tracking-tightish text-pretty">
-          مرحبًا مها ✦ أداء اليوم لافت
+          مرحبًا واعد ✦ لوحة الإعلانات الموحّدة
         </h1>
         <p className="m-0 text-[13.5px] text-ink-3">
-          الإنفاق الكلي عبر المنصات الثلاث لآخر ٧ أيام — المعدلات تتفوق على خط
-          الأساس.
+          اربط حسابات Snap وTikTok وInstagram لبدء المزامنة وعرض الأداء في مكان
+          واحد.
         </p>
       </div>
       <div className="flex items-center gap-[8px]">

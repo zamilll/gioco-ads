@@ -15,6 +15,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { cn, toArabicDigits } from "@/lib/utils";
+import { PlatformBadge, PLATFORM_NAME } from "@/components/ui/platform-badge";
+import { useCampaigns, useConnections } from "@/lib/api";
 
 type NavItem = {
   href: string;
@@ -23,22 +25,9 @@ type NavItem = {
   count?: number;
 };
 
-const generalNav: NavItem[] = [
-  { href: "/", label: "نظرة عامة", icon: LayoutGrid },
-  { href: "/campaigns", label: "الحملات", icon: Megaphone, count: 47 },
-  { href: "/creatives", label: "الإبداعات", icon: Images },
-  { href: "/audience", label: "الجمهور المستهدف", icon: Users },
-  { href: "/reports", label: "التقارير", icon: BarChart3 },
-  { href: "/budgets", label: "الميزانيات", icon: Wallet },
-];
-
-const settingsNav: NavItem[] = [
-  { href: "/connections", label: "الحسابات المرتبطة", icon: Link2 },
-  { href: "/settings", label: "الإعدادات", icon: Settings },
-];
-
 function NavLink({ item, active }: { item: NavItem; active: boolean }) {
   const Icon = item.icon;
+  const showCount = item.count !== undefined && item.count > 0;
   return (
     <Link
       href={item.href}
@@ -51,50 +40,46 @@ function NavLink({ item, active }: { item: NavItem; active: boolean }) {
     >
       <Icon className="shrink-0" size={16} />
       <span className="flex-1">{item.label}</span>
-      {item.count !== undefined ? (
+      {showCount ? (
         <span
           className={cn(
             "rounded-full px-[7px] py-[2px] text-[11px]",
-            active
-              ? "bg-accent/15 text-accent"
-              : "bg-chip text-ink-3",
+            active ? "bg-accent/15 text-accent" : "bg-chip text-ink-3",
           )}
         >
-          {toArabicDigits(item.count)}
+          {toArabicDigits(item.count!)}
         </span>
       ) : null}
     </Link>
   );
 }
 
-const connectedPlatforms = [
-  {
-    key: "snap" as const,
-    label: "Snap Ads",
-    spend: "٢٤٫٣K",
-    badge: "bg-snap-bg text-[#8A6D00]",
-    glyph: "S",
-  },
-  {
-    key: "tiktok" as const,
-    label: "TikTok Ads",
-    spend: "٣١٫٨K",
-    badge: "bg-tiktok-bg text-ink",
-    glyph: "T",
-  },
-  {
-    key: "insta" as const,
-    label: "Instagram Ads",
-    spend: "١٨٫٧K",
-    badge: "bg-insta-bg text-insta",
-    glyph: "I",
-  },
-];
-
 export function Sidebar() {
   const pathname = usePathname();
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
+
+  const { data: campaigns = [] } = useCampaigns();
+  const { data: connections = [] } = useConnections();
+
+  const generalNav: NavItem[] = [
+    { href: "/", label: "نظرة عامة", icon: LayoutGrid },
+    {
+      href: "/campaigns",
+      label: "الحملات",
+      icon: Megaphone,
+      count: campaigns.length,
+    },
+    { href: "/creatives", label: "الإبداعات", icon: Images },
+    { href: "/audiences", label: "الجمهور المستهدف", icon: Users },
+    { href: "/reports", label: "التقارير", icon: BarChart3 },
+    { href: "/budgets", label: "الميزانيات", icon: Wallet },
+  ];
+
+  const settingsNav: NavItem[] = [
+    { href: "/connections", label: "الحسابات المرتبطة", icon: Link2 },
+    { href: "/settings", label: "الإعدادات", icon: Settings },
+  ];
 
   return (
     <aside className="sticky top-0 flex h-screen flex-col overflow-y-auto border-s border-line bg-panel px-[14px] py-[18px]">
@@ -145,30 +130,36 @@ export function Sidebar() {
         <h5 className="mb-[10px] text-[11px] font-semibold uppercase tracking-widelabel text-ink-4">
           الحسابات المتصلة
         </h5>
-        {connectedPlatforms.map((p) => (
-          <div
-            key={p.key}
-            className="flex items-center gap-[8px] py-[6px] text-[12.5px] text-ink-2"
+        {connections.length === 0 ? (
+          <Link
+            href="/connections"
+            className="block rounded-[8px] border border-dashed border-line-2 px-[10px] py-[10px] text-center text-[11.5px] text-ink-3 hover:border-ink-3 hover:text-ink"
           >
-            <span
-              className={cn(
-                "grid h-[22px] w-[22px] place-items-center rounded-[6px] text-[10px] font-bold mono",
-                p.badge,
-              )}
+            لا توجد اتصالات — ابدأ بربط أول حساب
+          </Link>
+        ) : (
+          connections.map((c) => (
+            <div
+              key={c.platform}
+              className="flex items-center gap-[8px] py-[6px] text-[12.5px] text-ink-2"
             >
-              {p.glyph}
-            </span>
-            <span className="flex-1">{p.label}</span>
-            <span
-              className="h-[7px] w-[7px] rounded-full bg-good"
-              style={{
-                boxShadow:
-                  "0 0 0 3px color-mix(in oklab, var(--good) 20%, transparent)",
-              }}
-            />
-            <span className="mono text-[11px] text-ink-3">⇱ {p.spend}</span>
-          </div>
-        ))}
+              <PlatformBadge platform={c.platform} size="xs" />
+              <span className="flex-1">{PLATFORM_NAME[c.platform]}</span>
+              <span
+                className={cn(
+                  "h-[7px] w-[7px] rounded-full",
+                  c.status === "expiring" ? "bg-warn" : "bg-good",
+                )}
+                style={{
+                  boxShadow:
+                    c.status === "expiring"
+                      ? "0 0 0 3px color-mix(in oklab, var(--warn) 20%, transparent)"
+                      : "0 0 0 3px color-mix(in oklab, var(--good) 20%, transparent)",
+                }}
+              />
+            </div>
+          ))
+        )}
       </div>
     </aside>
   );

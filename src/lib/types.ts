@@ -1,4 +1,25 @@
 import type { Platform } from "@/components/ui/platform-badge";
+import type { StatusKind } from "@/components/ui/status-chip";
+
+export interface CampaignDetail {
+  id: string;
+  name: string;
+  objective: string;
+  createdAt: string;
+  createdBy: string;
+  endsAt: string;
+  platforms: Platform[];
+  status: StatusKind;
+  active: boolean;
+  budget: { total: number; spent: number };
+  kpis: {
+    spend: string;
+    impressions: string;
+    clicks: string;
+    conversions: string;
+    roas: string;
+  };
+}
 
 export type Objective =
   | "awareness"

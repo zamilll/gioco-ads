@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Segmented } from "@/components/ui/segmented";
@@ -8,7 +9,8 @@ import { StatusChip } from "@/components/ui/status-chip";
 import { PlatformStack } from "@/components/ui/platform-badge";
 import { Progress } from "@/components/ui/progress";
 import { DataTable, type Column } from "@/components/ui/data-table";
-import { Filter as FilterIcon } from "lucide-react";
+import { EmptyState } from "@/components/ui/empty-state";
+import { Filter as FilterIcon, Megaphone, Plus } from "lucide-react";
 import { campaigns, type CampaignRow } from "@/lib/mock-data";
 
 type CampaignFilter = "all" | "live" | "paused" | "draft";
@@ -110,7 +112,11 @@ export function CampaignsTable() {
     <Card>
       <CardHeader
         title="آخر الحملات"
-        subtitle="أعلى ٦ أداءً هذا الأسبوع"
+        subtitle={
+          campaigns.length
+            ? "أعلى أداءً هذا الأسبوع"
+            : "لم تُنشأ حملات بعد"
+        }
         actions={
           <div className="flex items-center gap-[8px]">
             <Segmented items={tabs} value={filter} onChange={setFilter} />
@@ -121,7 +127,23 @@ export function CampaignsTable() {
           </div>
         }
       />
-      <DataTable columns={columns} data={filtered} />
+      {filtered.length === 0 ? (
+        <EmptyState
+          icon={<Megaphone size={22} strokeWidth={1.6} />}
+          title="لا توجد حملات بعد"
+          description="ابدأ بإنشاء حملتك الأولى — معالج ٦ خطوات يربط الهدف والجمهور والإبداع ثم ينشر على المنصات المختارة."
+          action={
+            <Link href="/campaigns/new">
+              <Button variant="accent" size="sm">
+                <Plus size={13} strokeWidth={2} />
+                إنشاء حملة جديدة
+              </Button>
+            </Link>
+          }
+        />
+      ) : (
+        <DataTable columns={columns} data={filtered} />
+      )}
     </Card>
   );
 }
