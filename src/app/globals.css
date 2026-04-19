@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #F6F5F2;
+  --panel: #FFFFFF;
+  --ink: #141414;
+  --ink-2: #3B3B3B;
+  --ink-3: #6B6B6B;
+  --ink-4: #A8A8A8;
+  --line: #E8E6E1;
+  --line-2: #D9D6CF;
+  --chip: #EFEDE7;
+
+  --good: #1F7A4C;
+  --good-bg: #E3F1E9;
+  --warn: #B5651A;
+  --warn-bg: #F6EADD;
+  --bad: #A8321F;
+  --bad-bg: #F3DCD6;
+
+  --accent: #5A4BE6;
+  --accent-soft: #ECE9FE;
+
+  --p-snap: #EBB200;
+  --p-snap-bg: #FFF4CF;
+  --p-tiktok: #111111;
+  --p-tiktok-bg: #E8E8EA;
+  --p-tiktok-accent: #25F4EE;
+  --p-tiktok-accent-2: #FE2C55;
+  --p-insta: #D64B7E;
+  --p-insta-bg: #FBE6EE;
+
+  --radius: 14px;
+  --radius-sm: 10px;
+
+  --shadow-sm: 0 1px 0 rgba(20, 20, 20, 0.04), 0 1px 2px rgba(20, 20, 20, 0.04);
+  --shadow-md: 0 2px 8px rgba(20, 20, 20, 0.06), 0 8px 24px rgba(20, 20, 20, 0.05);
+}
+
+html[data-theme="dark"] {
+  --bg: #0E0E10;
+  --panel: #17171A;
+  --ink: #F2F1EC;
+  --ink-2: #C8C6BF;
+  --ink-3: #8D8B85;
+  --ink-4: #5B5A55;
+  --line: #24242A;
+  --line-2: #2E2E36;
+  --chip: #1F1F25;
+  --accent: #8D7CFF;
+  --accent-soft: #26214A;
+  --p-snap-bg: #3A2F05;
+  --p-tiktok-bg: #1F1F23;
+  --p-insta-bg: #3A1A28;
+  --good-bg: #0F2A1E;
+  --warn-bg: #2E2009;
+  --bad-bg: #2E100B;
+  --shadow-sm: 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+html[data-accent="violet"] {
+  --accent: #5A4BE6;
+  --accent-soft: #ECE9FE;
+}
+html[data-accent="emerald"] {
+  --accent: #0F7A55;
+  --accent-soft: #DDF1E7;
+}
+html[data-accent="amber"] {
+  --accent: #B45A09;
+  --accent-soft: #F7E6CE;
+}
+html[data-accent="ink"] {
+  --accent: #141414;
+  --accent-soft: #EAE8E2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ibm-plex-arabic), system-ui, sans-serif;
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+.num {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-feature-settings: "tnum";
+  letter-spacing: -0.01em;
+}
+
+.mono {
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  font-feature-settings: "tnum";
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.dot-pulse {
+  animation: pulse-soft 2s infinite;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}

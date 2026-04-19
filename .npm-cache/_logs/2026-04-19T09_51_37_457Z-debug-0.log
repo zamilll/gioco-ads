@@ -1,0 +1,778 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.2.4
+2 info using node@v20.11.0
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 0ms
+5 timing config:load:file:/usr/local/lib/node_modules/npm/npmrc Completed in 0ms
+6 timing config:load:builtin Completed in 0ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 0ms
+11 timing config:load:file:/Users/zm/.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:/usr/local/etc/npmrc Completed in 1ms
+14 timing config:load:global Completed in 1ms
+15 timing config:load:setEnvs Completed in 0ms
+16 timing config:load Completed in 2ms
+17 timing npm:load:configload Completed in 2ms
+18 timing config:load:flatten Completed in 0ms
+19 timing npm:load:mkdirpcache Completed in 1ms
+20 timing npm:load:mkdirplogs Completed in 0ms
+21 verbose title npm install lucide-react@latest
+22 verbose argv "install" "--cache" ".npm-cache" "lucide-react@latest"
+23 timing npm:load:setTitle Completed in 3ms
+24 timing npm:load:display Completed in 1ms
+25 verbose logfile logs-max:10 dir:/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/.npm-cache/_logs/2026-04-19T09_51_37_457Z-
+26 verbose logfile /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/.npm-cache/_logs/2026-04-19T09_51_37_457Z-debug-0.log
+27 timing npm:load:logFile Completed in 3ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 15ms
+31 timing arborist:ctor Completed in 1ms
+32 silly logfile done cleaning log files
+33 timing idealTree:init Completed in 53ms
+34 timing arborist:ctor Completed in 0ms
+35 http fetch GET 200 https://registry.npmjs.org/lucide-react 27ms (cache hit)
+36 timing idealTree:userRequests Completed in 30ms
+37 silly idealTree buildDeps
+38 silly fetch manifest lucide-react@1.8.0
+39 silly fetch manifest react@^18
+40 http fetch GET 200 https://registry.npmjs.org/react 3ms (cache hit)
+41 silly placeDep ROOT lucide-react@1.8.0 REPLACE for: gioco-ads-app@0.1.0 want: 1.8.0
+42 timing idealTree:#root Completed in 15ms
+43 timing idealTree:node_modules/lucide-react Completed in 0ms
+44 timing idealTree:buildDeps Completed in 16ms
+45 timing idealTree:fixDepFlags Completed in 4ms
+46 warn EBADENGINE Unsupported engine {
+46 warn EBADENGINE   package: 'eslint-visitor-keys@5.0.1',
+46 warn EBADENGINE   required: { node: '^20.19.0 || ^22.13.0 || >=24' },
+46 warn EBADENGINE   current: { node: 'v20.11.0', npm: '10.2.4' }
+46 warn EBADENGINE }
+47 timing idealTree Completed in 107ms
+48 timing reify:loadTrees Completed in 107ms
+49 timing reify:diffTrees Completed in 2ms
+50 silly reify moves {}
+51 timing reify:retireShallow Completed in 0ms
+52 timing reify:createSparse Completed in 1ms
+53 timing reify:loadBundles Completed in 0ms
+54 silly audit bulk request {
+54 silly audit   '@alloc/quick-lru': [ '5.2.0' ],
+54 silly audit   '@emnapi/core': [ '1.10.0' ],
+54 silly audit   '@emnapi/runtime': [ '1.10.0' ],
+54 silly audit   '@emnapi/wasi-threads': [ '1.2.1' ],
+54 silly audit   '@eslint-community/eslint-utils': [ '4.9.1' ],
+54 silly audit   '@eslint-community/regexpp': [ '4.12.2' ],
+54 silly audit   '@eslint/eslintrc': [ '2.1.4' ],
+54 silly audit   '@eslint/js': [ '8.57.1' ],
+54 silly audit   '@humanwhocodes/config-array': [ '0.13.0' ],
+54 silly audit   '@humanwhocodes/module-importer': [ '1.0.1' ],
+54 silly audit   '@humanwhocodes/object-schema': [ '2.0.3' ],
+54 silly audit   '@isaacs/cliui': [ '8.0.2' ],
+54 silly audit   'ansi-regex': [ '6.2.2', '5.0.1' ],
+54 silly audit   'strip-ansi': [ '7.2.0', '6.0.1' ],
+54 silly audit   '@jridgewell/gen-mapping': [ '0.3.13' ],
+54 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+54 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+54 silly audit   '@jridgewell/trace-mapping': [ '0.3.31' ],
+54 silly audit   '@napi-rs/wasm-runtime': [ '0.2.12' ],
+54 silly audit   '@next/env': [ '14.2.35' ],
+54 silly audit   '@next/eslint-plugin-next': [ '14.2.35' ],
+54 silly audit   '@next/swc-darwin-arm64': [ '14.2.33' ],
+54 silly audit   '@next/swc-darwin-x64': [ '14.2.33' ],
+54 silly audit   '@next/swc-linux-arm64-gnu': [ '14.2.33' ],
+54 silly audit   '@next/swc-linux-arm64-musl': [ '14.2.33' ],
+54 silly audit   '@next/swc-linux-x64-gnu': [ '14.2.33' ],
+54 silly audit   '@next/swc-linux-x64-musl': [ '14.2.33' ],
+54 silly audit   '@next/swc-win32-arm64-msvc': [ '14.2.33' ],
+54 silly audit   '@next/swc-win32-ia32-msvc': [ '14.2.33' ],
+54 silly audit   '@next/swc-win32-x64-msvc': [ '14.2.33' ],
+54 silly audit   '@nodelib/fs.scandir': [ '2.1.5' ],
+54 silly audit   '@nodelib/fs.stat': [ '2.0.5' ],
+54 silly audit   '@nodelib/fs.walk': [ '1.2.8' ],
+54 silly audit   '@nolyfill/is-core-module': [ '1.0.39' ],
+54 silly audit   '@pkgjs/parseargs': [ '0.11.0' ],
+54 silly audit   '@reduxjs/toolkit': [ '2.11.2' ],
+54 silly audit   immer: [ '11.1.4', '10.2.0' ],
+54 silly audit   '@rtsao/scc': [ '1.1.0' ],
+54 silly audit   '@rushstack/eslint-patch': [ '1.16.1' ],
+54 silly audit   '@standard-schema/spec': [ '1.1.0' ],
+54 silly audit   '@standard-schema/utils': [ '0.3.0' ],
+54 silly audit   '@swc/counter': [ '0.1.3' ],
+54 silly audit   '@swc/helpers': [ '0.5.5' ],
+54 silly audit   '@tanstack/query-core': [ '5.99.1' ],
+54 silly audit   '@tanstack/query-devtools': [ '5.99.1' ],
+54 silly audit   '@tanstack/react-query': [ '5.99.1' ],
+54 silly audit   '@tanstack/react-query-devtools': [ '5.99.1' ],
+54 silly audit   '@tybys/wasm-util': [ '0.10.1' ],
+54 silly audit   '@types/d3-array': [ '3.2.2' ],
+54 silly audit   '@types/d3-color': [ '3.1.3' ],
+54 silly audit   '@types/d3-ease': [ '3.0.2' ],
+54 silly audit   '@types/d3-interpolate': [ '3.0.4' ],
+54 silly audit   '@types/d3-path': [ '3.1.1' ],
+54 silly audit   '@types/d3-scale': [ '4.0.9' ],
+54 silly audit   '@types/d3-shape': [ '3.1.8' ],
+54 silly audit   '@types/d3-time': [ '3.0.4' ],
+54 silly audit   '@types/d3-timer': [ '3.0.2' ],
+54 silly audit   '@types/json5': [ '0.0.29' ],
+54 silly audit   '@types/node': [ '20.19.39' ],
+54 silly audit   '@types/prop-types': [ '15.7.15' ],
+54 silly audit   '@types/react': [ '18.3.28' ],
+54 silly audit   '@types/react-dom': [ '18.3.7' ],
+54 silly audit   '@types/use-sync-external-store': [ '0.0.6' ],
+54 silly audit   '@typescript-eslint/eslint-plugin': [ '8.58.2' ],
+54 silly audit   ignore: [ '7.0.5', '5.3.2' ],
+54 silly audit   '@typescript-eslint/parser': [ '8.58.2' ],
+54 silly audit   '@typescript-eslint/project-service': [ '8.58.2' ],
+54 silly audit   '@typescript-eslint/scope-manager': [ '8.58.2' ],
+54 silly audit   '@typescript-eslint/tsconfig-utils': [ '8.58.2' ],
+54 silly audit   '@typescript-eslint/type-utils': [ '8.58.2' ],
+54 silly audit   '@typescript-eslint/types': [ '8.58.2' ],
+54 silly audit   '@typescript-eslint/typescript-estree': [ '8.58.2' ],
+54 silly audit   'balanced-match': [ '4.0.4', '1.0.2' ],
+54 silly audit   'brace-expansion': [ '5.0.5', '1.1.14', '2.1.0' ],
+54 silly audit   minimatch: [ '10.2.5', '9.0.9', '3.1.5' ],
+54 silly audit   '@typescript-eslint/utils': [ '8.58.2' ],
+54 silly audit   '@typescript-eslint/visitor-keys': [ '8.58.2' ],
+54 silly audit   'eslint-visitor-keys': [ '5.0.1', '3.4.3' ],
+54 silly audit   '@ungap/structured-clone': [ '1.3.0' ],
+54 silly audit   '@unrs/resolver-binding-android-arm-eabi': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-android-arm64': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-darwin-arm64': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-darwin-x64': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-freebsd-x64': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-linux-arm-gnueabihf': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-linux-arm-musleabihf': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-linux-arm64-gnu': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-linux-arm64-musl': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-linux-ppc64-gnu': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-linux-riscv64-gnu': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-linux-riscv64-musl': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-linux-s390x-gnu': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-linux-x64-gnu': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-linux-x64-musl': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-wasm32-wasi': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-win32-arm64-msvc': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-win32-ia32-msvc': [ '1.11.1' ],
+54 silly audit   '@unrs/resolver-binding-win32-x64-msvc': [ '1.11.1' ],
+54 silly audit   acorn: [ '8.16.0' ],
+54 silly audit   'acorn-jsx': [ '5.3.2' ],
+54 silly audit   ajv: [ '6.14.0' ],
+54 silly audit   'ansi-styles': [ '4.3.0', '6.2.3' ],
+54 silly audit   'any-promise': [ '1.3.0' ],
+54 silly audit   anymatch: [ '3.1.3' ],
+54 silly audit   arg: [ '5.0.2' ],
+54 silly audit   argparse: [ '2.0.1' ],
+54 silly audit   'aria-query': [ '5.3.2' ],
+54 silly audit   'array-buffer-byte-length': [ '1.0.2' ],
+54 silly audit   'array-includes': [ '3.1.9' ],
+54 silly audit   'array.prototype.findlast': [ '1.2.5' ],
+54 silly audit   'array.prototype.findlastindex': [ '1.2.6' ],
+54 silly audit   'array.prototype.flat': [ '1.3.3' ],
+54 silly audit   'array.prototype.flatmap': [ '1.3.3' ],
+54 silly audit   'array.prototype.tosorted': [ '1.1.4' ],
+54 silly audit   'arraybuffer.prototype.slice': [ '1.0.4' ],
+54 silly audit   'ast-types-flow': [ '0.0.8' ],
+54 silly audit   'async-function': [ '1.0.0' ],
+54 silly audit   'available-typed-arrays': [ '1.0.7' ],
+54 silly audit   'axe-core': [ '4.11.3' ],
+54 silly audit   'axobject-query': [ '4.1.0' ],
+54 silly audit   'binary-extensions': [ '2.3.0' ],
+54 silly audit   braces: [ '3.0.3' ],
+54 silly audit   busboy: [ '1.6.0' ],
+54 silly audit   'call-bind': [ '1.0.9' ],
+54 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+54 silly audit   'call-bound': [ '1.0.4' ],
+54 silly audit   callsites: [ '3.1.0' ],
+54 silly audit   'camelcase-css': [ '2.0.1' ],
+54 silly audit   'caniuse-lite': [ '1.0.30001788' ],
+54 silly audit   chalk: [ '4.1.2' ],
+54 silly audit   chokidar: [ '3.6.0' ],
+54 silly audit   'glob-parent': [ '5.1.2', '6.0.2' ],
+54 silly audit   'class-variance-authority': [ '0.7.1' ],
+54 silly audit   'client-only': [ '0.0.1' ],
+54 silly audit   clsx: [ '2.1.1' ],
+54 silly audit   'color-convert': [ '2.0.1' ],
+54 silly audit   'color-name': [ '1.1.4' ],
+54 silly audit   commander: [ '4.1.1' ],
+54 silly audit   'concat-map': [ '0.0.1' ],
+54 silly audit   'cross-spawn': [ '7.0.6' ],
+54 silly audit   cssesc: [ '3.0.0' ],
+54 silly audit   csstype: [ '3.2.3' ],
+54 silly audit   'd3-array': [ '3.2.4' ],
+54 silly audit   'd3-color': [ '3.1.0' ],
+54 silly audit   'd3-ease': [ '3.0.1' ],
+54 silly audit   'd3-format': [ '3.1.2' ],
+54 silly audit   'd3-interpolate': [ '3.0.1' ],
+54 silly audit   'd3-path': [ '3.1.0' ],
+54 silly audit   'd3-scale': [ '4.0.2' ],
+54 silly audit   'd3-shape': [ '3.2.0' ],
+54 silly audit   'd3-time': [ '3.1.0' ],
+54 silly audit   'd3-time-format': [ '4.1.0' ],
+54 silly audit   'd3-timer': [ '3.0.1' ],
+54 silly audit   'damerau-levenshtein': [ '1.0.8' ],
+54 silly audit   'data-view-buffer': [ '1.0.2' ],
+54 silly audit   'data-view-byte-length': [ '1.0.2' ],
+54 silly audit   'data-view-byte-offset': [ '1.0.1' ],
+54 silly audit   debug: [ '4.4.3', '3.2.7' ],
+54 silly audit   'decimal.js-light': [ '2.5.1' ],
+54 silly audit   'deep-is': [ '0.1.4' ],
+54 silly audit   'define-data-property': [ '1.1.4' ],
+54 silly audit   'define-properties': [ '1.2.1' ],
+54 silly audit   didyoumean: [ '1.2.2' ],
+54 silly audit   dlv: [ '1.1.3' ],
+54 silly audit   doctrine: [ '3.0.0', '2.1.0' ],
+54 silly audit   'dunder-proto': [ '1.0.1' ],
+54 silly audit   eastasianwidth: [ '0.2.0' ],
+54 silly audit   'emoji-regex': [ '9.2.2', '8.0.0' ],
+54 silly audit   'es-abstract': [ '1.24.2' ],
+54 silly audit   'es-define-property': [ '1.0.1' ],
+54 silly audit   'es-errors': [ '1.3.0' ],
+54 silly audit   'es-iterator-helpers': [ '1.3.2' ],
+54 silly audit   'es-object-atoms': [ '1.1.1' ],
+54 silly audit   'es-set-tostringtag': [ '2.1.0' ],
+54 silly audit   'es-shim-unscopables': [ '1.1.0' ],
+54 silly audit   'es-to-primitive': [ '1.3.0' ],
+54 silly audit   'es-toolkit': [ '1.45.1' ],
+54 silly audit   'escape-string-regexp': [ '4.0.0' ],
+54 silly audit   eslint: [ '8.57.1' ],
+54 silly audit   'eslint-config-next': [ '14.2.35' ],
+54 silly audit   'eslint-import-resolver-node': [ '0.3.10' ],
+54 silly audit   'eslint-import-resolver-typescript': [ '3.10.1' ],
+54 silly audit   'eslint-module-utils': [ '2.12.1' ],
+54 silly audit   'eslint-plugin-import': [ '2.32.0' ],
+54 silly audit   semver: [ '6.3.1', '7.7.4' ],
+54 silly audit   'eslint-plugin-jsx-a11y': [ '6.10.2' ],
+54 silly audit   'eslint-plugin-react': [ '7.37.5' ],
+54 silly audit   'eslint-plugin-react-hooks': [ '5.0.0-canary-7118f5dd7-20230705' ],
+54 silly audit   'eslint-scope': [ '7.2.2' ],
+54 silly audit   espree: [ '9.6.1' ],
+54 silly audit   esquery: [ '1.7.0' ],
+54 silly audit   esrecurse: [ '4.3.0' ],
+54 silly audit   estraverse: [ '5.3.0' ],
+54 silly audit   esutils: [ '2.0.3' ],
+54 silly audit   eventemitter3: [ '5.0.4' ],
+54 silly audit   'fast-deep-equal': [ '3.1.3' ],
+54 silly audit   'fast-glob': [ '3.3.3' ],
+54 silly audit   'fast-json-stable-stringify': [ '2.1.0' ],
+54 silly audit   'fast-levenshtein': [ '2.0.6' ],
+54 silly audit   fastq: [ '1.20.1' ],
+54 silly audit   'file-entry-cache': [ '6.0.1' ],
+54 silly audit   'fill-range': [ '7.1.1' ],
+54 silly audit   'find-up': [ '5.0.0' ],
+54 silly audit   'flat-cache': [ '3.2.0' ],
+54 silly audit   flatted: [ '3.4.2' ],
+54 silly audit   'for-each': [ '0.3.5' ],
+54 silly audit   'foreground-child': [ '3.3.1' ],
+54 silly audit   'fs.realpath': [ '1.0.0' ],
+54 silly audit   fsevents: [ '2.3.3' ],
+54 silly audit   'function-bind': [ '1.1.2' ],
+54 silly audit   'function.prototype.name': [ '1.1.8' ],
+54 silly audit   'functions-have-names': [ '1.2.3' ],
+54 silly audit   'generator-function': [ '2.0.1' ],
+54 silly audit   'get-intrinsic': [ '1.3.0' ],
+54 silly audit   'get-proto': [ '1.0.1' ],
+54 silly audit   'get-symbol-description': [ '1.1.0' ],
+54 silly audit   'get-tsconfig': [ '4.14.0' ],
+54 silly audit   glob: [ '10.3.10', '7.2.3' ],
+54 silly audit   globals: [ '13.24.0' ],
+54 silly audit   globalthis: [ '1.0.4' ],
+54 silly audit   gopd: [ '1.2.0' ],
+54 silly audit   'graceful-fs': [ '4.2.11' ],
+54 silly audit   graphemer: [ '1.4.0' ],
+54 silly audit   'has-bigints': [ '1.1.0' ],
+54 silly audit   'has-flag': [ '4.0.0' ],
+54 silly audit   'has-property-descriptors': [ '1.0.2' ],
+54 silly audit   'has-proto': [ '1.2.0' ],
+54 silly audit   'has-symbols': [ '1.1.0' ],
+54 silly audit   'has-tostringtag': [ '1.0.2' ],
+54 silly audit   hasown: [ '2.0.3' ],
+54 silly audit   'import-fresh': [ '3.3.1' ],
+54 silly audit   imurmurhash: [ '0.1.4' ],
+54 silly audit   inflight: [ '1.0.6' ],
+54 silly audit   inherits: [ '2.0.4' ],
+54 silly audit   'internal-slot': [ '1.1.0' ],
+54 silly audit   internmap: [ '2.0.3' ],
+54 silly audit   'is-array-buffer': [ '3.0.5' ],
+54 silly audit   'is-async-function': [ '2.1.1' ],
+54 silly audit   'is-bigint': [ '1.1.0' ],
+54 silly audit   'is-binary-path': [ '2.1.0' ],
+54 silly audit   'is-boolean-object': [ '1.2.2' ],
+54 silly audit   'is-bun-module': [ '2.0.0' ],
+54 silly audit   'is-callable': [ '1.2.7' ],
+54 silly audit   'is-core-module': [ '2.16.1' ],
+54 silly audit   'is-data-view': [ '1.0.2' ],
+54 silly audit   'is-date-object': [ '1.1.0' ],
+54 silly audit   'is-extglob': [ '2.1.1' ],
+54 silly audit   'is-finalizationregistry': [ '1.1.1' ],
+54 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+54 silly audit   'is-generator-function': [ '1.1.2' ],
+54 silly audit   'is-glob': [ '4.0.3' ],
+54 silly audit   'is-map': [ '2.0.3' ],
+54 silly audit   'is-negative-zero': [ '2.0.3' ],
+54 silly audit   'is-number': [ '7.0.0' ],
+54 silly audit   'is-number-object': [ '1.1.1' ],
+54 silly audit   'is-path-inside': [ '3.0.3' ],
+54 silly audit   'is-regex': [ '1.2.1' ],
+54 silly audit   'is-set': [ '2.0.3' ],
+54 silly audit   'is-shared-array-buffer': [ '1.0.4' ],
+54 silly audit   'is-string': [ '1.1.1' ],
+54 silly audit   'is-symbol': [ '1.1.1' ],
+54 silly audit   'is-typed-array': [ '1.1.15' ],
+54 silly audit   'is-weakmap': [ '2.0.2' ],
+54 silly audit   'is-weakref': [ '1.1.1' ],
+54 silly audit   'is-weakset': [ '2.0.4' ],
+54 silly audit   isarray: [ '2.0.5' ],
+54 silly audit   isexe: [ '2.0.0' ],
+54 silly audit   'iterator.prototype': [ '1.1.5' ],
+54 silly audit   jackspeak: [ '2.3.6' ],
+54 silly audit   jiti: [ '1.21.7' ],
+54 silly audit   'js-tokens': [ '4.0.0' ],
+54 silly audit   'js-yaml': [ '4.1.1' ],
+54 silly audit   'json-buffer': [ '3.0.1' ],
+54 silly audit   'json-schema-traverse': [ '0.4.1' ],
+54 silly audit   'json-stable-stringify-without-jsonify': [ '1.0.1' ],
+54 silly audit   json5: [ '1.0.2' ],
+54 silly audit   'jsx-ast-utils': [ '3.3.5' ],
+54 silly audit   keyv: [ '4.5.4' ],
+54 silly audit   'language-subtag-registry': [ '0.3.23' ],
+54 silly audit   'language-tags': [ '1.0.9' ],
+54 silly audit   levn: [ '0.4.1' ],
+54 silly audit   lilconfig: [ '3.1.3' ],
+54 silly audit   'lines-and-columns': [ '1.2.4' ],
+54 silly audit   'locate-path': [ '6.0.0' ],
+54 silly audit   'lodash.merge': [ '4.6.2' ],
+54 silly audit   'loose-envify': [ '1.4.0' ],
+54 silly audit   'lru-cache': [ '10.4.3' ],
+54 silly audit   'math-intrinsics': [ '1.1.0' ],
+54 silly audit   merge2: [ '1.4.1' ],
+54 silly audit   micromatch: [ '4.0.8' ],
+54 silly audit   minimist: [ '1.2.8' ],
+54 silly audit   minipass: [ '7.1.3' ],
+54 silly audit   ms: [ '2.1.3' ],
+54 silly audit   mz: [ '2.7.0' ],
+54 silly audit   nanoid: [ '3.3.11' ],
+54 silly audit   'napi-postinstall': [ '0.3.4' ],
+54 silly audit   'natural-compare': [ '1.4.0' ],
+54 silly audit   next: [ '14.2.35' ],
+54 silly audit   postcss: [ '8.4.31', '8.5.10' ],
+54 silly audit   'node-exports-info': [ '1.6.0' ],
+54 silly audit   'normalize-path': [ '3.0.0' ],
+54 silly audit   'object-assign': [ '4.1.1' ],
+54 silly audit   'object-hash': [ '3.0.0' ],
+54 silly audit   'object-inspect': [ '1.13.4' ],
+54 silly audit   'object-keys': [ '1.1.1' ],
+54 silly audit   'object.assign': [ '4.1.7' ],
+54 silly audit   'object.entries': [ '1.1.9' ],
+54 silly audit   'object.fromentries': [ '2.0.8' ],
+54 silly audit   'object.groupby': [ '1.0.3' ],
+54 silly audit   'object.values': [ '1.2.1' ],
+54 silly audit   once: [ '1.4.0' ],
+54 silly audit   optionator: [ '0.9.4' ],
+54 silly audit   'own-keys': [ '1.0.1' ],
+54 silly audit   'p-limit': [ '3.1.0' ],
+54 silly audit   'p-locate': [ '5.0.0' ],
+54 silly audit   'parent-module': [ '1.0.1' ],
+54 silly audit   'path-exists': [ '4.0.0' ],
+54 silly audit   'path-is-absolute': [ '1.0.1' ],
+54 silly audit   'path-key': [ '3.1.1' ],
+54 silly audit   'path-parse': [ '1.0.7' ],
+54 silly audit   'path-scurry': [ '1.11.1' ],
+54 silly audit   picocolors: [ '1.1.1' ],
+54 silly audit   picomatch: [ '2.3.2', '4.0.4' ],
+54 silly audit   pify: [ '2.3.0' ],
+54 silly audit   pirates: [ '4.0.7' ],
+54 silly audit   'possible-typed-array-names': [ '1.1.0' ],
+54 silly audit   'postcss-import': [ '15.1.0' ],
+54 silly audit   resolve: [ '1.22.12', '2.0.0-next.6' ],
+54 silly audit   'postcss-js': [ '4.1.0' ],
+54 silly audit   'postcss-load-config': [ '6.0.1' ],
+54 silly audit   'postcss-nested': [ '6.2.0' ],
+54 silly audit   'postcss-selector-parser': [ '6.1.2' ],
+54 silly audit   'postcss-value-parser': [ '4.2.0' ],
+54 silly audit   'prelude-ls': [ '1.2.1' ],
+54 silly audit   'prop-types': [ '15.8.1' ],
+54 silly audit   punycode: [ '2.3.1' ],
+54 silly audit   'queue-microtask': [ '1.2.3' ],
+54 silly audit   react: [ '18.3.1' ],
+54 silly audit   'react-dom': [ '18.3.1' ],
+54 silly audit   'react-is': [ '16.13.1' ],
+54 silly audit   'react-redux': [ '9.2.0' ],
+54 silly audit   'read-cache': [ '1.0.0' ],
+54 silly audit   readdirp: [ '3.6.0' ],
+54 silly audit   recharts: [ '3.8.1' ],
+54 silly audit   redux: [ '5.0.1' ],
+54 silly audit   'redux-thunk': [ '3.1.0' ],
+54 silly audit   'reflect.getprototypeof': [ '1.0.10' ],
+54 silly audit   'regexp.prototype.flags': [ '1.5.4' ],
+54 silly audit   reselect: [ '5.1.1' ],
+54 silly audit   'resolve-from': [ '4.0.0' ],
+54 silly audit   'resolve-pkg-maps': [ '1.0.0' ],
+54 silly audit   reusify: [ '1.1.0' ],
+54 silly audit   rimraf: [ '3.0.2' ],
+54 silly audit   'run-parallel': [ '1.2.0' ],
+54 silly audit   'safe-array-concat': [ '1.1.3' ],
+54 silly audit   'safe-push-apply': [ '1.0.0' ],
+54 silly audit   'safe-regex-test': [ '1.1.0' ],
+54 silly audit   scheduler: [ '0.23.2' ],
+54 silly audit   'set-function-length': [ '1.2.2' ],
+54 silly audit   'set-function-name': [ '2.0.2' ],
+54 silly audit   'set-proto': [ '1.0.0' ],
+54 silly audit   'shebang-command': [ '2.0.0' ],
+54 silly audit   'shebang-regex': [ '3.0.0' ],
+54 silly audit   'side-channel': [ '1.1.0' ],
+54 silly audit   'side-channel-list': [ '1.0.1' ],
+54 silly audit   'side-channel-map': [ '1.0.1' ],
+54 silly audit   'side-channel-weakmap': [ '1.0.2' ],
+54 silly audit   'signal-exit': [ '4.1.0' ],
+54 silly audit   'source-map-js': [ '1.2.1' ],
+54 silly audit   'stable-hash': [ '0.0.5' ],
+54 silly audit   'stop-iteration-iterator': [ '1.1.0' ],
+54 silly audit   streamsearch: [ '1.1.0' ],
+54 silly audit   'string-width': [ '5.1.2', '4.2.3' ],
+54 silly audit   'string.prototype.includes': [ '2.0.1' ],
+54 silly audit   'string.prototype.matchall': [ '4.0.12' ],
+54 silly audit   'string.prototype.repeat': [ '1.0.0' ],
+54 silly audit   'string.prototype.trim': [ '1.2.10' ],
+54 silly audit   'string.prototype.trimend': [ '1.0.9' ],
+54 silly audit   'string.prototype.trimstart': [ '1.0.8' ],
+54 silly audit   'strip-bom': [ '3.0.0' ],
+54 silly audit   'strip-json-comments': [ '3.1.1' ],
+54 silly audit   'styled-jsx': [ '5.1.1' ],
+54 silly audit   sucrase: [ '3.35.1' ],
+54 silly audit   'supports-color': [ '7.2.0' ],
+54 silly audit   'supports-preserve-symlinks-flag': [ '1.0.0' ],
+54 silly audit   'tailwind-merge': [ '3.5.0' ],
+54 silly audit   tailwindcss: [ '3.4.19' ],
+54 silly audit   'tailwindcss-animate': [ '1.0.7' ],
+54 silly audit   'text-table': [ '0.2.0' ],
+54 silly audit   thenify: [ '3.3.1' ],
+54 silly audit   'thenify-all': [ '1.6.0' ],
+54 silly audit   'tiny-invariant': [ '1.3.3' ],
+54 silly audit   tinyglobby: [ '0.2.16' ],
+54 silly audit   fdir: [ '6.5.0' ],
+54 silly audit   'to-regex-range': [ '5.0.1' ],
+54 silly audit   'ts-api-utils': [ '2.5.0' ],
+54 silly audit   'ts-interface-checker': [ '0.1.13' ],
+54 silly audit   'tsconfig-paths': [ '3.15.0' ],
+54 silly audit   tslib: [ '2.8.1' ],
+54 silly audit   'type-check': [ '0.4.0' ],
+54 silly audit   'type-fest': [ '0.20.2' ],
+54 silly audit   'typed-array-buffer': [ '1.0.3' ],
+54 silly audit   'typed-array-byte-length': [ '1.0.3' ],
+54 silly audit   'typed-array-byte-offset': [ '1.0.4' ],
+54 silly audit   'typed-array-length': [ '1.0.7' ],
+54 silly audit   typescript: [ '5.9.3' ],
+54 silly audit   'unbox-primitive': [ '1.1.0' ],
+54 silly audit   'undici-types': [ '6.21.0' ],
+54 silly audit   'unrs-resolver': [ '1.11.1' ],
+54 silly audit   'uri-js': [ '4.4.1' ],
+54 silly audit   'use-sync-external-store': [ '1.6.0' ],
+54 silly audit   'util-deprecate': [ '1.0.2' ],
+54 silly audit   'victory-vendor': [ '37.3.6' ],
+54 silly audit   which: [ '2.0.2' ],
+54 silly audit   'which-boxed-primitive': [ '1.1.1' ],
+54 silly audit   'which-builtin-type': [ '1.2.1' ],
+54 silly audit   'which-collection': [ '1.0.2' ],
+54 silly audit   'which-typed-array': [ '1.1.20' ],
+54 silly audit   'word-wrap': [ '1.2.5' ],
+54 silly audit   'wrap-ansi': [ '8.1.0', '7.0.0' ],
+54 silly audit   wrappy: [ '1.0.2' ],
+54 silly audit   'yocto-queue': [ '0.1.0' ],
+54 silly audit   'lucide-react': [ '1.8.0' ]
+54 silly audit }
+55 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-win32-x64-msvc
+56 silly reify mark deleted [
+56 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-win32-x64-msvc'
+56 silly reify ]
+57 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-win32-ia32-msvc
+58 silly reify mark deleted [
+58 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-win32-ia32-msvc'
+58 silly reify ]
+59 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-win32-arm64-msvc
+60 silly reify mark deleted [
+60 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-win32-arm64-msvc'
+60 silly reify ]
+61 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-wasm32-wasi
+62 silly reify mark deleted [
+62 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-wasm32-wasi'
+62 silly reify ]
+63 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@napi-rs/wasm-runtime
+64 silly reify mark deleted [
+64 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@napi-rs/wasm-runtime'
+64 silly reify ]
+65 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@emnapi/core
+66 silly reify mark deleted [
+66 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@emnapi/core'
+66 silly reify ]
+67 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@emnapi/runtime
+68 silly reify mark deleted [
+68 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@emnapi/runtime'
+68 silly reify ]
+69 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@tybys/wasm-util
+70 silly reify mark deleted [
+70 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@tybys/wasm-util'
+70 silly reify ]
+71 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@emnapi/wasi-threads
+72 silly reify mark deleted [
+72 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@emnapi/wasi-threads'
+72 silly reify ]
+73 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-x64-musl
+74 silly reify mark deleted [
+74 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-x64-musl'
+74 silly reify ]
+75 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-x64-gnu
+76 silly reify mark deleted [
+76 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-x64-gnu'
+76 silly reify ]
+77 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-s390x-gnu
+78 silly reify mark deleted [
+78 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-s390x-gnu'
+78 silly reify ]
+79 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-riscv64-musl
+80 silly reify mark deleted [
+80 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-riscv64-musl'
+80 silly reify ]
+81 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-riscv64-gnu
+82 silly reify mark deleted [
+82 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-riscv64-gnu'
+82 silly reify ]
+83 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-ppc64-gnu
+84 silly reify mark deleted [
+84 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-ppc64-gnu'
+84 silly reify ]
+85 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-arm64-musl
+86 silly reify mark deleted [
+86 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-arm64-musl'
+86 silly reify ]
+87 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-arm64-gnu
+88 silly reify mark deleted [
+88 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-arm64-gnu'
+88 silly reify ]
+89 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-arm-musleabihf
+90 silly reify mark deleted [
+90 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-arm-musleabihf'
+90 silly reify ]
+91 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-arm-gnueabihf
+92 silly reify mark deleted [
+92 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-linux-arm-gnueabihf'
+92 silly reify ]
+93 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-freebsd-x64
+94 silly reify mark deleted [
+94 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-freebsd-x64'
+94 silly reify ]
+95 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-darwin-x64
+96 silly reify mark deleted [
+96 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-darwin-x64'
+96 silly reify ]
+97 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-android-arm64
+98 silly reify mark deleted [
+98 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-android-arm64'
+98 silly reify ]
+99 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-android-arm-eabi
+100 silly reify mark deleted [
+100 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@unrs/resolver-binding-android-arm-eabi'
+100 silly reify ]
+101 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-win32-x64-msvc
+102 silly reify mark deleted [
+102 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-win32-x64-msvc'
+102 silly reify ]
+103 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-win32-ia32-msvc
+104 silly reify mark deleted [
+104 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-win32-ia32-msvc'
+104 silly reify ]
+105 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-win32-arm64-msvc
+106 silly reify mark deleted [
+106 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-win32-arm64-msvc'
+106 silly reify ]
+107 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-linux-x64-musl
+108 silly reify mark deleted [
+108 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-linux-x64-musl'
+108 silly reify ]
+109 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-linux-x64-gnu
+110 silly reify mark deleted [
+110 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-linux-x64-gnu'
+110 silly reify ]
+111 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-linux-arm64-musl
+112 silly reify mark deleted [
+112 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-linux-arm64-musl'
+112 silly reify ]
+113 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-linux-arm64-gnu
+114 silly reify mark deleted [
+114 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-linux-arm64-gnu'
+114 silly reify ]
+115 verbose reify failed optional dependency /Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-darwin-x64
+116 silly reify mark deleted [
+116 silly reify   '/Users/zm/Desktop/design_handoff_gioco_ads/gioco-ads-app/node_modules/@next/swc-darwin-x64'
+116 silly reify ]
+117 timing reifyNode:node_modules/@unrs/resolver-binding-win32-x64-msvc Completed in 16ms
+118 timing reifyNode:node_modules/@unrs/resolver-binding-win32-ia32-msvc Completed in 16ms
+119 timing reifyNode:node_modules/@unrs/resolver-binding-win32-arm64-msvc Completed in 16ms
+120 timing reifyNode:node_modules/@unrs/resolver-binding-wasm32-wasi Completed in 16ms
+121 timing reifyNode:node_modules/@unrs/resolver-binding-linux-x64-musl Completed in 16ms
+122 timing reifyNode:node_modules/@unrs/resolver-binding-linux-x64-gnu Completed in 16ms
+123 timing reifyNode:node_modules/@unrs/resolver-binding-linux-s390x-gnu Completed in 16ms
+124 timing reifyNode:node_modules/@unrs/resolver-binding-linux-riscv64-musl Completed in 16ms
+125 timing reifyNode:node_modules/@unrs/resolver-binding-linux-riscv64-gnu Completed in 16ms
+126 timing reifyNode:node_modules/@unrs/resolver-binding-linux-ppc64-gnu Completed in 17ms
+127 timing reifyNode:node_modules/@unrs/resolver-binding-linux-arm64-musl Completed in 17ms
+128 timing reifyNode:node_modules/@unrs/resolver-binding-linux-arm64-gnu Completed in 17ms
+129 timing reifyNode:node_modules/@unrs/resolver-binding-linux-arm-musleabihf Completed in 17ms
+130 timing reifyNode:node_modules/@unrs/resolver-binding-linux-arm-gnueabihf Completed in 17ms
+131 timing reifyNode:node_modules/@unrs/resolver-binding-freebsd-x64 Completed in 17ms
+132 timing reifyNode:node_modules/@unrs/resolver-binding-darwin-x64 Completed in 17ms
+133 timing reifyNode:node_modules/@unrs/resolver-binding-android-arm64 Completed in 17ms
+134 timing reifyNode:node_modules/@unrs/resolver-binding-android-arm-eabi Completed in 17ms
+135 timing reifyNode:node_modules/@next/swc-win32-x64-msvc Completed in 17ms
+136 timing reifyNode:node_modules/@next/swc-win32-ia32-msvc Completed in 17ms
+137 timing reifyNode:node_modules/@next/swc-win32-arm64-msvc Completed in 17ms
+138 timing reifyNode:node_modules/@next/swc-linux-x64-musl Completed in 17ms
+139 timing reifyNode:node_modules/@next/swc-linux-x64-gnu Completed in 17ms
+140 timing reifyNode:node_modules/@next/swc-linux-arm64-musl Completed in 17ms
+141 timing reifyNode:node_modules/@next/swc-linux-arm64-gnu Completed in 17ms
+142 timing reifyNode:node_modules/@next/swc-darwin-x64 Completed in 17ms
+143 timing reifyNode:node_modules/@emnapi/wasi-threads Completed in 36ms
+144 timing reifyNode:node_modules/@emnapi/runtime Completed in 37ms
+145 timing reifyNode:node_modules/@tybys/wasm-util Completed in 40ms
+146 timing reifyNode:node_modules/@emnapi/core Completed in 40ms
+147 timing reifyNode:node_modules/@napi-rs/wasm-runtime Completed in 45ms
+148 timing reify:unpack Completed in 45ms
+149 timing reify:unretire Completed in 0ms
+150 timing build:queue Completed in 1ms
+151 timing build:deps Completed in 1ms
+152 timing build Completed in 1ms
+153 timing reify:build Completed in 1ms
+154 timing reify:trash Completed in 3ms
+155 timing reify:save Completed in 35ms
+156 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 922ms
+157 timing auditReport:getReport Completed in 924ms
+158 silly audit report {
+158 silly audit report   glob: [
+158 silly audit report     {
+158 silly audit report       id: 1109842,
+158 silly audit report       url: 'https://github.com/advisories/GHSA-5j98-mcp5-4vw2',
+158 silly audit report       title: 'glob CLI: Command injection via -c/--cmd executes matches with shell:true',
+158 silly audit report       severity: 'high',
+158 silly audit report       vulnerable_versions: '>=10.2.0 <10.5.0',
+158 silly audit report       cwe: [Array],
+158 silly audit report       cvss: [Object]
+158 silly audit report     }
+158 silly audit report   ],
+158 silly audit report   next: [
+158 silly audit report     {
+158 silly audit report       id: 1112593,
+158 silly audit report       url: 'https://github.com/advisories/GHSA-9g9p-9gw9-jx7f',
+158 silly audit report       title: 'Next.js self-hosted applications vulnerable to DoS via Image Optimizer remotePatterns configuration',
+158 silly audit report       severity: 'moderate',
+158 silly audit report       vulnerable_versions: '>=10.0.0 <15.5.10',
+158 silly audit report       cwe: [Array],
+158 silly audit report       cvss: [Object]
+158 silly audit report     },
+158 silly audit report     {
+158 silly audit report       id: 1112653,
+158 silly audit report       url: 'https://github.com/advisories/GHSA-h25m-26qc-wcjf',
+158 silly audit report       title: 'Next.js HTTP request deserialization can lead to DoS when using insecure React Server Components',
+158 silly audit report       severity: 'high',
+158 silly audit report       vulnerable_versions: '>=13.0.0 <15.0.8',
+158 silly audit report       cwe: [Array],
+158 silly audit report       cvss: [Object]
+158 silly audit report     },
+158 silly audit report     {
+158 silly audit report       id: 1114897,
+158 silly audit report       url: 'https://github.com/advisories/GHSA-ggv3-7p47-pfv8',
+158 silly audit report       title: 'Next.js: HTTP request smuggling in rewrites',
+158 silly audit report       severity: 'moderate',
+158 silly audit report       vulnerable_versions: '>=9.5.0 <15.5.13',
+158 silly audit report       cwe: [Array],
+158 silly audit report       cvss: [Object]
+158 silly audit report     },
+158 silly audit report     {
+158 silly audit report       id: 1114940,
+158 silly audit report       url: 'https://github.com/advisories/GHSA-3x4c-7xq6-9pq8',
+158 silly audit report       title: 'Next.js: Unbounded next/image disk cache growth can exhaust storage',
+158 silly audit report       severity: 'moderate',
+158 silly audit report       vulnerable_versions: '>=10.0.0 <15.5.14',
+158 silly audit report       cwe: [Array],
+158 silly audit report       cvss: [Object]
+158 silly audit report     },
+158 silly audit report     {
+158 silly audit report       id: 1116376,
+158 silly audit report       url: 'https://github.com/advisories/GHSA-q4gf-8mx6-v5v3',
+158 silly audit report       title: 'Next.js has a Denial of Service with Server Components',
+158 silly audit report       severity: 'high',
+158 silly audit report       vulnerable_versions: '>=13.0.0 <15.5.15',
+158 silly audit report       cwe: [Array],
+158 silly audit report       cvss: [Object]
+158 silly audit report     }
+158 silly audit report   ]
+158 silly audit report }
+159 timing metavuln:cache:get:security-advisory:glob:NTB2XjbDOgk4lkd8PZ3tUAm1F3E/ohGF6rl9/3LEO7Z0FDzSR5nWwzd3nUENA3NCNdyeR+35DOC12wPml2IV+g== Completed in 5ms
+160 timing metavuln:cache:get:security-advisory:next:3TA4O3EmeHOziCX4u9l4IBFBAPxWeQGxoijidoX+ldET6YKxjUcLFRhQVFM5X6vREfhCEhSA9T7d5fKHVz2CcA== Completed in 5ms
+161 timing metavuln:cache:get:security-advisory:next:owasql2RGfaRn6gCrEIYc1sLXkl1GuxqJbyX4pwqCr7f/tVRvnWuaIoanwkbKZ9RBWsvTnyiF9QrYyjzAdBqCg== Completed in 5ms
+162 timing metavuln:cache:get:security-advisory:next:ItJZ7qy1iUzxbodxayiejQRfV5cCQvX0fnpMwXLDBxbVruEW2O3qtQbmcGQKdCKBR49CjNmJDt46lWVTov1sQA== Completed in 6ms
+163 timing metavuln:cache:get:security-advisory:next:GCi2VjQ+xIankByzHe4ZXO0Uwx2FJAEb3wwNZc/B4wp4HXVgOhv8Jd02gDZ/z3OGbsWKVMoiRfJ+NReCbZIsqA== Completed in 5ms
+164 timing metavuln:cache:get:security-advisory:next:usPEHPdWuyjsh+HI2+rwEPUzXWKe09mdbdIIFpG2O1Zd2medsdvkN5wwKHxOzkpfm2FC7E54Nx/sY33UEU3C1Q== Completed in 6ms
+165 http fetch GET 200 https://registry.npmjs.org/glob 11ms (cache hit)
+166 timing metavuln:packument:glob Completed in 13ms
+167 timing metavuln:load:security-advisory:glob:1109842 Completed in 1ms
+168 timing metavuln:calculate:security-advisory:glob:1109842 Completed in 15ms
+169 http fetch GET 200 https://registry.npmjs.org/next 41ms (cache hit)
+170 timing metavuln:packument:next Completed in 174ms
+171 timing metavuln:load:security-advisory:next:1112593 Completed in 21ms
+172 timing metavuln:calculate:security-advisory:next:1112593 Completed in 195ms
+173 timing metavuln:load:security-advisory:next:1112653 Completed in 18ms
+174 timing metavuln:calculate:security-advisory:next:1112653 Completed in 214ms
+175 timing metavuln:load:security-advisory:next:1114897 Completed in 19ms
+176 timing metavuln:calculate:security-advisory:next:1114897 Completed in 233ms
+177 timing metavuln:load:security-advisory:next:1114940 Completed in 18ms
+178 timing metavuln:calculate:security-advisory:next:1114940 Completed in 250ms
+179 timing metavuln:load:security-advisory:next:1116376 Completed in 18ms
+180 timing metavuln:calculate:security-advisory:next:1116376 Completed in 268ms
+181 timing metavuln:cache:get:security-advisory:@next/eslint-plugin-next:PvOLmaLvBa62/MSwOoeVcFtG41ceA4r3c/+CRslQCFHIqz2IKPEVFqVWr5T0jcFHrN6kR5E5FbNMo23kCF9gdg== Completed in 1ms
+182 http fetch GET 200 https://registry.npmjs.org/@next%2feslint-plugin-next 4ms (cache hit)
+183 timing metavuln:packument:@next/eslint-plugin-next Completed in 9ms
+184 timing metavuln:load:security-advisory:@next/eslint-plugin-next:NTB2XjbDOgk4lkd8PZ3tUAm1F3E/ohGF6rl9/3LEO7Z0FDzSR5nWwzd3nUENA3NCNdyeR+35DOC12wPml2IV+g== Completed in 12ms
+185 timing metavuln:calculate:security-advisory:@next/eslint-plugin-next:NTB2XjbDOgk4lkd8PZ3tUAm1F3E/ohGF6rl9/3LEO7Z0FDzSR5nWwzd3nUENA3NCNdyeR+35DOC12wPml2IV+g== Completed in 21ms
+186 timing metavuln:cache:get:security-advisory:eslint-config-next:volOrje9bMc3dFnnsdrvpxPiUdLeCov80INEmkNw6JaX2GvepJi9bsm+RGK6makQSL3N/126SYrBcGcbXdAW0g== Completed in 1ms
+187 http fetch GET 200 https://registry.npmjs.org/eslint-config-next 4ms (cache hit)
+188 timing metavuln:packument:eslint-config-next Completed in 10ms
+189 timing metavuln:load:security-advisory:eslint-config-next:PvOLmaLvBa62/MSwOoeVcFtG41ceA4r3c/+CRslQCFHIqz2IKPEVFqVWr5T0jcFHrN6kR5E5FbNMo23kCF9gdg== Completed in 11ms
+190 timing metavuln:calculate:security-advisory:eslint-config-next:PvOLmaLvBa62/MSwOoeVcFtG41ceA4r3c/+CRslQCFHIqz2IKPEVFqVWr5T0jcFHrN6kR5E5FbNMo23kCF9gdg== Completed in 21ms
+191 timing auditReport:init Completed in 328ms
+192 timing reify:audit Completed in 1253ms
+193 timing reify Completed in 1365ms
+194 silly ADD
+195 silly ADD
+196 silly ADD
+197 silly ADD
+198 silly ADD
+199 silly ADD
+200 silly ADD
+201 silly ADD
+202 silly ADD
+203 silly ADD
+204 silly ADD
+205 silly ADD
+206 silly ADD
+207 silly ADD
+208 silly ADD
+209 silly ADD
+210 silly ADD
+211 silly ADD
+212 silly ADD
+213 silly ADD
+214 silly ADD
+215 silly ADD
+216 silly ADD
+217 silly ADD
+218 silly ADD
+219 silly ADD
+220 silly ADD
+221 silly ADD
+222 silly ADD
+223 silly ADD
+224 silly ADD
+225 timing command:install Completed in 1392ms
+226 verbose exit 0
+227 timing npm Completed in 1476ms
+228 info ok

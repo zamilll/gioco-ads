@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(node *)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(npm run *)",
+      "Bash(curl -sf http://localhost:3000 -o /dev/null)",
+      "Bash(curl -s -o /dev/null -w \"HTTP_STATUS: %{http_code}\\\\n\" http://localhost:3000/connections)",
+      "Bash(curl -s -o /dev/null -w \"HTTP_STATUS: %{http_code}\\\\n\" http://localhost:3000/campaigns/new)",
+      "Bash(curl -s -o /dev/null -w \"HTTP_STATUS: %{http_code}\\\\n\" http://localhost:3000/campaigns/c1)",
+      "Bash(curl -s -o /dev/null -w \"connections: %{http_code}\\\\n\" http://localhost:3001/connections)",
+      "Bash(curl -s -o /dev/null -w \"new: %{http_code}\\\\n\" http://localhost:3001/campaigns/new)",
+      "Bash(curl -s -o /dev/null -w \"detail: %{http_code}\\\\n\" http://localhost:3001/campaigns/c1)",
+      "Bash(curl -s http://localhost:3001/campaigns/c1)",
+      "Bash(kill %1)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(curl -sf http://localhost:3001 -o /dev/null)"
+    ]
+  }
+}
