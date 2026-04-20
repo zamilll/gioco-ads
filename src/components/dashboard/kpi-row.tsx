@@ -1,8 +1,8 @@
 import { KpiCard } from "@/components/ui/kpi-card";
 import { Sparkline } from "@/components/charts/sparkline";
-import { kpis } from "@/lib/mock-data";
+import { kpis as fallbackKpis, type Kpi } from "@/lib/mock-data";
 
-export function KpiRow() {
+export function KpiRow({ kpis = fallbackKpis }: { kpis?: Kpi[] } = {}) {
   return (
     <div className="mb-[16px] grid grid-cols-4 gap-[14px]">
       {kpis.map((k, idx) => (

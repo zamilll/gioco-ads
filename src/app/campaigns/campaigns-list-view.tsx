@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Filter as FilterIcon, Megaphone, Plus, Search } from "lucide-react";
 import { Card, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Segmented } from "@/components/ui/segmented";
 import { StatusChip } from "@/components/ui/status-chip";
 import { PlatformStack } from "@/components/ui/platform-badge";
@@ -11,16 +13,16 @@ import { Progress } from "@/components/ui/progress";
 import { DataTable, type Column } from "@/components/ui/data-table";
 import { EmptyState } from "@/components/ui/empty-state";
 import { toast } from "@/components/ui/toast";
-import { Filter as FilterIcon, Megaphone, Plus } from "lucide-react";
-import { type CampaignRow } from "@/lib/mock-data";
+import type { CampaignRow } from "@/lib/mock-data";
 
-type CampaignFilter = "all" | "live" | "paused" | "draft";
+type CampaignFilter = "all" | "live" | "paused" | "draft" | "ended";
 
 const tabs = [
   { value: "all" as const, label: "الكل" },
   { value: "live" as const, label: "نشطة" },
   { value: "paused" as const, label: "متوقفة" },
   { value: "draft" as const, label: "مسودات" },
+  { value: "ended" as const, label: "منتهية" },
 ];
 
 const columns: Column<CampaignRow>[] = [
@@ -28,7 +30,10 @@ const columns: Column<CampaignRow>[] = [
     key: "name",
     header: "الحملة",
     render: (row) => (
-      <div className="flex items-center gap-[10px]">
+      <Link
+        href={`/campaigns/${row.id}`}
+        className="flex items-center gap-[10px] hover:underline"
+      >
         <div
           className="h-[36px] w-[36px] shrink-0 rounded-[8px] border border-line"
           style={{ background: row.thumb }}
@@ -37,7 +42,7 @@ const columns: Column<CampaignRow>[] = [
           <b className="font-semibold">{row.name}</b>
           <div className="text-[11.5px] text-ink-3">{row.subtitle}</div>
         </div>
-      </div>
+      </Link>
     ),
   },
   {
@@ -101,30 +106,55 @@ const columns: Column<CampaignRow>[] = [
   },
 ];
 
-export function CampaignsTable({
-  campaigns = [],
-}: { campaigns?: CampaignRow[] } = {}) {
+export function CampaignsListView({
+  campaigns,
+  errorMessage,
+}: {
+  campaigns: CampaignRow[];
+  errorMessage?: string;
+}) {
   const [filter, setFilter] = useState<CampaignFilter>("all");
+  const [query, setQuery] = useState("");
+
   const filtered = campaigns.filter((c) => {
-    if (filter === "all") return true;
-    if (filter === "draft") return c.status === "draft";
-    return c.status === filter;
+    const statusOk = filter === "all" ? true : c.status === filter;
+    const textOk =
+      query.length === 0
+        ? true
+        : c.name.includes(query) || c.subtitle.includes(query);
+    return statusOk && textOk;
   });
 
   return (
     <Card>
       <CardHeader
-        title="آخر الحملات"
+        title={`كل الحملات ${campaigns.length ? `(${campaigns.length})` : ""}`}
         subtitle={
-          campaigns.length
-            ? "أعلى أداءً هذا الأسبوع"
-            : "لم تُنشأ حملات بعد"
+          errorMessage
+            ? errorMessage
+            : campaigns.length
+              ? undefined
+              : "لا توجد حملات بعد"
         }
         actions={
           <div className="flex items-center gap-[8px]">
+            <div className="relative">
+              <Search
+                size={13}
+                strokeWidth={1.8}
+                className="absolute top-1/2 end-[10px] -translate-y-1/2 text-ink-3"
+              />
+              <Input
+                placeholder="بحث"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                className="h-[32px] w-[200px] py-[6px] pe-[30px] text-[12.5px]"
+              />
+            </div>
             <Segmented items={tabs} value={filter} onChange={setFilter} />
             <Button
               variant="ghost"
+              size="sm"
               onClick={() =>
                 toast({
                   tone: "info",
@@ -142,15 +172,38 @@ export function CampaignsTable({
       {filtered.length === 0 ? (
         <EmptyState
           icon={<Megaphone size={22} strokeWidth={1.6} />}
-          title="لا توجد حملات بعد"
-          description="ابدأ بإنشاء حملتك الأولى — معالج ٦ خطوات يربط الهدف والجمهور والإبداع ثم ينشر على المنصات المختارة."
+          title={
+            campaigns.length === 0
+              ? errorMessage
+                ? "تعذّر جلب الحملات"
+                : "لم تُنشأ حملات بعد"
+              : "لا توجد نتائج"
+          }
+          description={
+            campaigns.length === 0
+              ? errorMessage
+                ? "تأكّد من ربط حساب Unified.to وأن متغيرات البيئة مضبوطة، ثم أعد تحميل الصفحة."
+                : "ابدأ بإنشاء حملتك الأولى — معالج ٦ خطوات يربط الهدف والجمهور والإبداع ثم ينشر على المنصات المختارة."
+              : "جرّب تعديل عبارة البحث أو تغيير فلتر الحالة."
+          }
           action={
-            <Link href="/campaigns/new">
-              <Button variant="accent" size="sm">
-                <Plus size={13} strokeWidth={2} />
-                إنشاء حملة جديدة
-              </Button>
-            </Link>
+            campaigns.length === 0 && !errorMessage ? (
+              <Link href="/campaigns/new">
+                <Button variant="accent" size="sm">
+                  <Plus size={13} strokeWidth={2} />
+                  إنشاء حملة جديدة
+                </Button>
+              </Link>
+            ) : null
+          }
+          secondary={
+            campaigns.length === 0 ? (
+              <Link href="/connections">
+                <Button variant="ghost" size="sm">
+                  ربط منصة
+                </Button>
+              </Link>
+            ) : null
           }
         />
       ) : (

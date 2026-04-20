@@ -7,9 +7,14 @@ import { Button } from "@/components/ui/button";
 import { PlatformBadge } from "@/components/ui/platform-badge";
 import { EmptyState } from "@/components/ui/empty-state";
 import { toast } from "@/components/ui/toast";
-import { platformPerformance } from "@/lib/mock-data";
+import {
+  platformPerformance as fallbackPerformance,
+  type PlatformPerformance,
+} from "@/lib/mock-data";
 
-export function PlatformPerformanceCard() {
+export function PlatformPerformanceCard({
+  platformPerformance = fallbackPerformance,
+}: { platformPerformance?: PlatformPerformance[] } = {}) {
   return (
     <Card>
       <CardHeader

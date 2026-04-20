@@ -1,6 +1,3 @@
-"use client";
-
-import { useState } from "react";
 import { Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,7 +5,6 @@ import {
   PLATFORM_NAME,
   type Platform,
 } from "@/components/ui/platform-badge";
-import { OAuthConsentDialog } from "./oauth-consent-dialog";
 
 const PLATFORMS: Array<{
   id: Platform;
@@ -37,27 +33,17 @@ const PLATFORMS: Array<{
   },
 ];
 
-export function ConnectableList() {
-  const [dialogPlatform, setDialogPlatform] = useState<Platform | null>(null);
+export function ConnectableList({
+  connectUrls,
+}: {
+  connectUrls: Record<Platform, string>;
+}) {
   return (
-    <>
-      <div className="mb-[20px] grid gap-[14px]">
-        {PLATFORMS.map((p) => (
-          <ConnectableCard
-            key={p.id}
-            {...p}
-            onConnect={() => setDialogPlatform(p.id)}
-          />
-        ))}
-      </div>
-      <OAuthConsentDialog
-        platform={dialogPlatform}
-        open={dialogPlatform !== null}
-        onOpenChange={(o) => {
-          if (!o) setDialogPlatform(null);
-        }}
-      />
-    </>
+    <div className="mb-[20px] grid gap-[14px]">
+      {PLATFORMS.map((p) => (
+        <ConnectableCard key={p.id} {...p} connectUrl={connectUrls[p.id]} />
+      ))}
+    </div>
   );
 }
 
@@ -65,12 +51,12 @@ function ConnectableCard({
   id,
   desc,
   highlights,
-  onConnect,
+  connectUrl,
 }: {
   id: Platform;
   desc: string;
   highlights: string[];
-  onConnect: () => void;
+  connectUrl: string;
 }) {
   return (
     <div className="flex flex-wrap items-start gap-[14px] rounded-card border border-line bg-panel p-[18px] shadow-token-sm">
@@ -94,10 +80,12 @@ function ConnectableCard({
           ))}
         </div>
       </div>
-      <Button variant="accent" size="sm" onClick={onConnect}>
-        <Plus size={13} strokeWidth={2} />
-        ربط الحساب
-      </Button>
+      <a href={connectUrl}>
+        <Button variant="accent" size="sm">
+          <Plus size={13} strokeWidth={2} />
+          ربط الحساب
+        </Button>
+      </a>
     </div>
   );
 }
